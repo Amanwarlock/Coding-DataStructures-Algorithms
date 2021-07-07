@@ -175,6 +175,7 @@ class Node {
     } 
   }
   
+  // NLR - Node, Left, Right
   function traversePreOrder(node, list){
     list.push(node.value);
     if(node.left) {
@@ -186,6 +187,7 @@ class Node {
     return list;
   }
   
+  //  LNR - Left Node Right
   function traverseInOrder(node, list){
     if(node.left) {
       traverseInOrder(node.left, list);
@@ -197,6 +199,7 @@ class Node {
     return list;
   }
   
+  // LRN - Left Right Node
   function traversePostOrder(node, list){
     if(node.left) {
       traversePostOrder(node.left, list);

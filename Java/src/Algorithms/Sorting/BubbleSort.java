@@ -1,4 +1,4 @@
-package Algorithms;
+package Algorithms.Sorting;
 
 public class BubbleSort {
     public static void printArr(int[] arr, String msg){

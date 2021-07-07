@@ -107,6 +107,22 @@ class LinkedList {
       this.head = first;
       return this.printList();
     }
+
+    reverseMyImpl() {
+      let prevNode = null;
+      let currentNode = this.head;
+      this.tail = this.head;
+      while (currentNode) {
+          let nextNode = currentNode.next;
+          currentNode.next = prevNode;
+          prevNode = currentNode;
+          currentNode = nextNode;
+      }
+      this.head = prevNode;
+      console.log(this);
+      this.printList();
+    }
+  
 }
 
 let myLinkedList = new LinkedList(10);
