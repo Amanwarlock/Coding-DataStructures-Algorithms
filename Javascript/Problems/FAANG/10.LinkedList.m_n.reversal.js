@@ -1,5 +1,8 @@
 /*
+LINK: https://leetcode.com/problems/reverse-linked-list-ii/
 NOTE: The beginning portion builds our test case linked list. Scroll down to the section titled Our Solution for the code solution!
+Given the head of a singly linked list and two integers left and right where left <= right, 
+reverse the nodes of the list from position left to position right, and return the reversed list.
  */
 
 class ListNode {
@@ -34,7 +37,8 @@ class ListNode {
       currentPos++;
     }
     
-    let newList = null, tail = currentNode;
+    let newList = null; // head of newList; 
+    let tail = currentNode;
     
     while(currentPos >= m && currentPos <= n) {
       const next = currentNode.next;
@@ -44,7 +48,7 @@ class ListNode {
       currentPos++;
     }
     
-    start.next = newList;
+    start.next = newList; // If m = head index (start of linked List) , then start and tail will be same. As start and tail was pointing to head, which now is at the end (tail)
     tail.next = currentNode;
     
     if(m > 1) {
