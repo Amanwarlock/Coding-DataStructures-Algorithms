@@ -1,10 +1,22 @@
+/**
+ * Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.
+
+If target is not found in the array, return [-1, -1].
+
+You must write an algorithm with O(log n) runtime complexity.
+ 
+ *  LINK: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+
+ */
+
+
 const array = [1,3,3,5,5,5,8,9];
 const targetToFind = 5;
 
 const binarySearch = (nums, left, right, target) => {
-  while (left <= right) {
+  while (left <= right) { //untill you narrowed down to the single element;
     const mid = Math.floor((left + right) / 2);
-    const foundVal = nums[mid];
+    const foundVal = nums[mid]; // guess
     if (foundVal === target) {
       return mid;
     } else if (foundVal < target) {

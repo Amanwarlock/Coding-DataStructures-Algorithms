@@ -1,3 +1,8 @@
+/**
+ * Based on binary search and quick sort --modified and tailored as per  Hoare's quickselect algorithm;
+ * LINK: https://leetcode.com/problems/kth-largest-element-in-an-array/
+ */
+
 const array = [5,3,1,6,4,2];
 const kToFind = 4;
 
@@ -19,6 +24,7 @@ const getPartition = function (nums, left, right) {
   return i - 1;
 };
 
+//Apply binary search using quick sort
 const quickSelect = function (nums, left, right, indexToFind) {
   const partitionIndex = getPartition(nums, left, right);
 
@@ -33,6 +39,7 @@ const quickSelect = function (nums, left, right, indexToFind) {
 
 var findKthLargest = function (nums, k) {
   const indexToFind = nums.length - k;
+  console.log("index t find ", indexToFind);
 
   return quickSelect(nums, 0, nums.length - 1, indexToFind);
 };

@@ -1,5 +1,7 @@
 /*
 NOTE: The beginning portion builds our test case binary tree. Scroll down to the section titled Our Solution for the code solution!
+
+LINK: https://leetcode.com/problems/maximum-depth-of-binary-tree/
  */
 
 // ------- Code to generate our binary tree -------
@@ -31,19 +33,29 @@ class TreeNode {
 }
 
 const root = new TreeNode();
-root.insert([1,1,1,1,null,null,null,1,null,null,null,1,null,null]);
+root.insert([1, 1, 1, 1, null, null, null, 1, null, null, null, 1, null, null]);
 
 // ------- Code to generate our binary tree -------
 
 // ------- Our Solution -------
-var maxDepth = function(node, currentDepth) {
-    if (!node) {
-      return currentDepth;
-    }
-    
-    currentDepth++;
-    
-    return Math.max(maxDepth(node.right, currentDepth), maxDepth(node.left, currentDepth));
+var maxDepth = function (node, currentDepth) {
+  if (!node) {
+    return currentDepth;
+  }
+
+  currentDepth++;
+
+  return Math.max(
+    maxDepth(node.right, currentDepth),
+    maxDepth(node.left, currentDepth)
+  );
 };
 
-console.log(maxDepth(root, 0));
+var maxDepth2 = function (node) {
+  if (node === null) return -1;
+  return Math.max(maxDepth2(node.left, maxDepth2(node.right))) + 1;
+};
+
+console.log(" Max depth 1 result : ",maxDepth(root, 0));
+
+console.log("Max depth 2 result : ", maxDepth2(root));

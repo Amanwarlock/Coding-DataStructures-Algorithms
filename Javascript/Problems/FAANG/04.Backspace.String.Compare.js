@@ -70,7 +70,7 @@ const string1 = "ab#z"
 const string2 = "az#z"
 
 const buildString = function(string) {
-    const builtString = [];
+    const builtString = [];//stack
     for(let p = 0; p < string.length; p++) {
         if(string[p] !== '#') {
             builtString.push(string[p]);

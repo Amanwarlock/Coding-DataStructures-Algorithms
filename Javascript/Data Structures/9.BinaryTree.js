@@ -162,6 +162,26 @@ function traverse(node) {
 }
 
 
+var maxDepth = function(node, currentDepth) {
+  if (!node) {
+    return currentDepth;
+  }
+  
+  currentDepth++;
+  
+  return Math.max(maxDepth(node.right, currentDepth), maxDepth(node.left, currentDepth));
+};
+
+
+var maxDepth2 = function (node) {
+  if (node === null) return -1;
+  return Math.max(maxDepth2(node.left, maxDepth2(node.right))) + 1;
+};
+
+console.log("Depth 1 = ", maxDepth(tree.root, 0));
+
+console.log("Depth 2 = ", maxDepth2(tree.root));
+
 
 
 

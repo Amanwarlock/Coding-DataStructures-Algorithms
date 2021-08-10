@@ -1,4 +1,7 @@
-const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+const numbers =   [
+  5,  2,  7, 8,
+ -2, 25, 25
+]//[99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
 function quickSort(array, left, right){
   const len = array.length; 
@@ -39,3 +42,21 @@ function swap(array, firstIndex, secondIndex){
 //Select first and last index as 2nd and 3rd parameters
 quickSort(numbers, 0, numbers.length - 1);
 console.log(numbers);
+
+
+//-------------------------------------------------------------------------------------------------------
+
+/**
+ * ALTERNATE METHOD;
+ */
+ const getPartition = function (nums, left, right) {
+  let i = left;
+
+  for (let j = left; j <= right; j++) {
+    if (nums[j] <= nums[right]) {
+      swap(nums, i, j);
+      i++;
+    }
+  }
+  return i - 1;
+};

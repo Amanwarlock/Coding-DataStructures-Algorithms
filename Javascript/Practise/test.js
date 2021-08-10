@@ -1,68 +1,130 @@
-function strCompare(a, b){
-  if(a === b ){
-      return 0;
-  }else if(a > b){
-      return 1;
-  }
-  
-  return -1;
-}
-
-console.log(strCompare('ut', 'md'));
 
 
+    /**
+     * SOLID -
+     *  S - Single responsibility principle
+     *  O - Open - closed Principle
+     *  L -  Liskov Substitution Principle
+     *  I - Interface Segregation Principle
+     *  D - Dependency Inversion Principle
+     */
 
-function lexSort(arr){
-  for(let i = 0; i < arr.length; i++){
-      for(let j = 0; j < arr.length; j++){
-          let t1 = arr[j].split(" ");
-          let t2 = arr[j+1] ? arr[j+1].split(" "): null;
-          let index = 1;
-          let id1 = t1[0];
-          let id2 = t2 ? t2[0]: null;
-          let word1 = t1[index];
-          let word2 = t2 ? t2[index]: null;
-          let res = 0;
-          while(res === 0 && word1 && word2){
-              res = strCompare(word1 , word2);
-              index += 1;
-              word1 = t1[index];
-              word2 = t2[index];
-          }
-          
-          if(res === 1){
-              let temp = t1;
-              t1 = t2;
-              t2 = temp;
-          } else if(res === 0 && id1 && id2){
-              // sort them by Identifier;
-              res = strCompare(id1 , id1);
-              if(res === 1){
-                  let temp = t1;
-                  t1 = t2;
-                  t2 = temp;
-              }
-          }
-      }
-  }
-  
-  return arr;
-}
-
-function strCompare(a, b){
-  if(a === b ){
-      return 0;
-  }else if(a > b){
-      return 1;
-  }
-  
-  return -1;
-}
+    /**
+     * @since August 6th 2021
+     */
 
 
+    class Portal{
+        login(user){
+            return new User(); // stack
+        }
 
-let arr = ["t3 pz ft gj ut",
-"jh7 pz ft gj md"];
+    }
+
+    /**
+     * @description OMS
+     *
+     */
+    class  Order {
+
+        email; // private
+        street;
+        postalCode;
+        City;
+        State;
+        Card;
+        expiry;
+        cvv;
+        products = ['Dove', ];
+
+        constructor(){
+           
+        }
+
+        // order - name, qty, price
+            
+        // customer - blling - shopping - card derail
+        createCustomer(){
+            return new BuildCustomer(this);
+        }
+
+        createOrder(){
+            return  new BuildOrder(this);
+        }
+
+        build(){
+            return this;
+        }
+    }
+
+    
+    class BuildOrder {
+         // access modifier
+         constructor(order){
+             this.order = order;
+         }
+        addToCart(string){  
+            this.order.products.push(string);
+        }
+    }
+
+    class BuildCustomer{
+       
+        constructor(order){
+            this.order = order;
+        }
 
 
-  lexSort(arr);
+        addEmail(email){
+            this.order.email = email;
+            return this.order;
+        }
+
+        addStreet(street){
+            this.order.street = street;
+            return this.order;
+        }
+
+        addPostalCode(){
+
+        }
+
+        addCity(){
+
+        }
+
+    }
+
+
+
+    class User{
+        email;
+        pwd;
+        _id;
+        orders; // linked list head
+
+        placeOrderInstance = null;
+        // singleton desing
+        placeOrder(user){
+            if( placeOrderInstance=== null){
+                this.placeOrderInstance = new OrderManagementSystem();
+            }
+            return this.placeOrderInstance;
+        }
+
+    }   
+
+
+
+
+    //////
+    //
+    const portal = new Portal();
+
+    let user = portal.login('aman@gmail.com', '12334');
+
+    let order = user.placeOrder().createCustomer().addEmail().addCity().createOrder().build();
+
+    
+
+
