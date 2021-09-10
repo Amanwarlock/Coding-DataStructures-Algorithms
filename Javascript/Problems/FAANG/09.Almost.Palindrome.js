@@ -31,3 +31,5 @@ var validPalindrome = function(s) {
     }
     return true;
   };
+
+  console.log(validPalindrome("abca"));

@@ -8,6 +8,16 @@ const testMatrix = [
     [0, 1, 0, 0, 1],
     [0, 0, 0, 1, 1]
   ];
+
+/**
+ * const testMatrix = [
+  [0, 1, 0, 1, 0],
+  [1, 0, 1, 0, 1],
+  [0, 1, 1, 1, 0],
+  [1, 0, 1, 0, 1]
+];
+
+ */
   
   const directions = [
     [-1, 0], //up
@@ -56,10 +66,17 @@ const testMatrix = [
     return islandCount;
   }
   
-  console.log(numberOfIslands(testMatrix));
+  console.log("BFS : ", numberOfIslands(testMatrix));
 
 
   //-----------------------------------DFS APPROACH---------------------------------------
+
+  const testMatrix2 = [
+    [1, 1, 1, 0, 0],
+    [1, 1, 1, 0, 1],
+    [0, 1, 0, 0, 1],
+    [0, 0, 0, 1, 1]
+  ];
 
   const dfs = function(grid, currentRow, currentCol) {
     if(currentRow < 0 || currentRow >= grid.length || currentCol < 0 || currentCol >= grid[0].length) return;
@@ -74,6 +91,7 @@ const testMatrix = [
         dfs(grid, currentRow + row, currentCol + col);
       }
     }
+    // else returns
   }
   
   const numberOfIslandsDFS = function(grid) {
@@ -95,4 +113,4 @@ const testMatrix = [
   
   
   
-  console.log(numberOfIslandsDFS(testMatrix));
+  console.log("DFS : " ,numberOfIslandsDFS(testMatrix2));

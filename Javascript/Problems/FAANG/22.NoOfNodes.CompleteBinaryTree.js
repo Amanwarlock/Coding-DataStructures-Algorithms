@@ -1,6 +1,20 @@
 /*
 NOTE: The beginning portion builds our test case binary tree. Scroll down to the section titled Our Solution for the code solution!
- */
+                      
+                        N                 2^0 = 1 node
+                N               N         2^1 = 2
+            N       N       N       N     2^2 = 4
+          N   N   N   N   N   N   N   N   2^3 = 8  
+
+          h = 4
+
+          2^(h-1) - 1 = upper count
+
+          Upper count = (1 + 2 + 4 = 7 nodes) (2^3 - 1 = 8 - 1 = 7)
+
+*/
+
+          
 
 // ------- Code to generate our binary tree -------
 class TreeNode {
@@ -50,7 +64,7 @@ class TreeNode {
   const nodeExists = function(idxToFind, height, node) {
     let left = 0, right = Math.pow(2, height) - 1, count = 0;
     
-    while(count < height) {
+    while(count < height) { // contiue only till as deep as the tree's height; as we want to decide whether to turn left or right as long as we are within the height;
       const midOfNode = Math.ceil((left + right) / 2);
       
       if(idxToFind >= midOfNode) {
@@ -67,19 +81,24 @@ class TreeNode {
     return node !== null;
   }
   
+
+  /**
+   *  T - O(logN) 
+   *  S - O(logN)
+   */
   const countNodes = function(root) {
     if(!root) return 0;
     
     const height = getTreeHeight(root);
     
-    if(height === 0) return 1;
+    if(height === 0) return 1; // If there is only one node, then no need to proceed, count of nodes will be only 1
     
-    const upperCount = Math.pow(2, height) - 1
+    const upperCount = Math.pow(2, height) - 1 // No of nodes in upper level except the very last level;
     
     let left = 0, right = upperCount;
     
     while(left < right) {
-      const idxToFind = Math.ceil((left + right) / 2);
+      const idxToFind = Math.ceil((left + right) / 2); // round up
       
       if(nodeExists(idxToFind, height, root)) {
         left = idxToFind;

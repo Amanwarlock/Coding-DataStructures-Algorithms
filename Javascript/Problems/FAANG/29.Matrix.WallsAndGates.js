@@ -1,5 +1,8 @@
 /**
- * @description https://leetcode.com/problems/walls-and-gates/
+ * @description 
+ * Minimum time taken by each empty cell to reach the nearest gate;
+ *  - Fill each empty cell with the minimum time it takes to reach the nearest gate;
+ *  - If from an empty cell the gate is not reacheable then leave as infinity; 
  */
 
  const INF = 2147483647;
@@ -31,6 +34,10 @@
  }
  
  
+ /**
+  * 
+  * @description DFS APproach
+  */
  const wallsAndGates = (rooms) => {
    for (let row = 0; row < rooms.length; row++) {
      for (let col = 0; col < rooms[0].length; col++) {

@@ -12,7 +12,7 @@ const isValidPalindrome = function(s) {
     let left = 0; right = s.length - 1;
     
     // loop through string characters while comparing them, then move the pointers closer to the center
-    while(left < right) {
+    while(left < right) { // left and right should not point to same as we dont want to compare char with itself as it will be same
         if(s[left] !== s[right]) {
             return false
         }

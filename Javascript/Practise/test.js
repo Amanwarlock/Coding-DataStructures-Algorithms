@@ -1,130 +1,55 @@
+class ListNode {
+  constructor(val, next = null) {
+    this.val = val;
+    this.next = next;
+  }
+}
+// ---- Generate our linked list ----
+const linkedList = [5, 4, 3, 2, 1].reduce((acc, val) => new ListNode(val, acc), null);
+
+const printList = (head) => {
+  if(!head) {
+    return;
+  }
+
+  console.log(head.val);
+  printList(head.next);
+}
 
 
-    /**
-     * SOLID -
-     *  S - Single responsibility principle
-     *  O - Open - closed Principle
-     *  L -  Liskov Substitution Principle
-     *  I - Interface Segregation Principle
-     *  D - Dependency Inversion Principle
-     */
+function reverseBetween(head, m, n){
+  let currentPos = 1;
+  let currentNode = head;
+  let start = head;
 
-    /**
-     * @since August 6th 2021
-     */
+  while(currentPos < m){
+    start = currentNode;
+    currentNode = currentNode.next;
+    currentPos++;
+  }
 
+  let newList = null;
+  let tail = currentNode;
 
-    class Portal{
-        login(user){
-            return new User(); // stack
-        }
+  while(currentPos >= m && currentPos <= n){
+    let next = currentNode.next;
+    currentNode.next = newList;
+    newList = currentNode;
+    currentNode = next;
+    currentPos++;
+  }
 
-    }
+    start.next = newList;
+    tail.next = currentNode;
 
-    /**
-     * @description OMS
-     *
-     */
-    class  Order {
+    if(m === 1) return newList;
+    else return head;
 
-        email; // private
-        street;
-        postalCode;
-        City;
-        State;
-        Card;
-        expiry;
-        cvv;
-        products = ['Dove', ];
+}
 
-        constructor(){
-           
-        }
+printList(linkedList);
+console.log('after reverse');
 
-        // order - name, qty, price
-            
-        // customer - blling - shopping - card derail
-        createCustomer(){
-            return new BuildCustomer(this);
-        }
+printList(reverseBetween(linkedList, 1, 5));
 
-        createOrder(){
-            return  new BuildOrder(this);
-        }
-
-        build(){
-            return this;
-        }
-    }
-
-    
-    class BuildOrder {
-         // access modifier
-         constructor(order){
-             this.order = order;
-         }
-        addToCart(string){  
-            this.order.products.push(string);
-        }
-    }
-
-    class BuildCustomer{
-       
-        constructor(order){
-            this.order = order;
-        }
-
-
-        addEmail(email){
-            this.order.email = email;
-            return this.order;
-        }
-
-        addStreet(street){
-            this.order.street = street;
-            return this.order;
-        }
-
-        addPostalCode(){
-
-        }
-
-        addCity(){
-
-        }
-
-    }
-
-
-
-    class User{
-        email;
-        pwd;
-        _id;
-        orders; // linked list head
-
-        placeOrderInstance = null;
-        // singleton desing
-        placeOrder(user){
-            if( placeOrderInstance=== null){
-                this.placeOrderInstance = new OrderManagementSystem();
-            }
-            return this.placeOrderInstance;
-        }
-
-    }   
-
-
-
-
-    //////
-    //
-    const portal = new Portal();
-
-    let user = portal.login('aman@gmail.com', '12334');
-
-    let order = user.placeOrder().createCustomer().addEmail().addCity().createOrder().build();
-
-    
-
-
+//console.log("Res : ", almostPalidrome(string));

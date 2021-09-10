@@ -1,5 +1,5 @@
 /**
- * LINK: https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
+ * LINK: https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/ 
  */
 
 const string1 = "(ab(cd)"
