@@ -1,8 +1,8 @@
 package Q17_02_Shuffle;
 
-import java.util.Random;
-
 import CtCILibrary.AssortedMethods;
+
+import java.util.Random;
 
 public class Question {	
 	public static int[] shuffleArrayRecursively(int[] cards, int i) {

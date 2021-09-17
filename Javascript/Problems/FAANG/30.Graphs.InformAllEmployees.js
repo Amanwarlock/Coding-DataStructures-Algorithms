@@ -57,6 +57,7 @@
    return dfs(headID, adjList, informTime);
  };
  
+ // post-order -- MAX(left emp , right emp) + manager
  const dfs = function(currentId, adjList, informTime) {
    if(adjList[currentId].length === 0) {
      return 0; // if manager has no subordinates to inform , then he needs 0 minutes;

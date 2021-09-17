@@ -57,3 +57,40 @@ class TreeNode {
       if(!root) return true;
       return dfs(root, -Infinity, Infinity);
   };
+
+
+  console.log("ValidBST-1 : ", isValidBST(tree));
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/**
+ * @description Method 2
+ */
+
+function isValidBST2(root){
+  return checkBST(root, null, null);
+}
+
+function checkBST(node, min, max){
+  if(node === null) return true;
+
+  if((min !== null && node.val <= min) || (max !== null && node.val > max)){
+    return false;
+  }
+
+  if(!checkBST(node.left, min, node.val) || (!checkBST(node.right, node.val, max))){
+    return false;
+  }
+
+  return true;
+
+}
+
+
+
+console.log("ValidBST-2 : ", isValidBST2(tree));
+
+
+
+
+

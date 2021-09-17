@@ -1,9 +1,9 @@
 package Q17_14_Smallest_K;
 
+import CtCILibrary.AssortedMethods;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
-
-import CtCILibrary.AssortedMethods;
 
 public class QuestionB {
 	

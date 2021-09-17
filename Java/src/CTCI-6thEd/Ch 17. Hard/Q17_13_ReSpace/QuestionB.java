@@ -1,8 +1,8 @@
 package Q17_13_ReSpace;
 
-import java.util.HashSet;
-
 import CtCILibrary.AssortedMethods;
+
+import java.util.HashSet;
 public class QuestionB {
 	
 	public static String bestSplit(HashSet<String> dictionary, String sentence) {

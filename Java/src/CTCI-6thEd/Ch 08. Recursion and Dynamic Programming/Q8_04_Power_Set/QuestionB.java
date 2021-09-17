@@ -1,6 +1,6 @@
 package Q8_04_Power_Set;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class QuestionB {
 	

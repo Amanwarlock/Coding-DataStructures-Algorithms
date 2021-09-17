@@ -1,10 +1,10 @@
 package Q7_10_Minesweeper;
 
+import Q7_10_Minesweeper.Game.GameState;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
-
-import Q7_10_Minesweeper.Game.GameState;
 
 public class Board {
 	private int nRows;

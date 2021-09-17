@@ -1,8 +1,8 @@
 package Q17_03_Random_Set;
 
-import java.util.Random;
-
 import CtCILibrary.AssortedMethods;
+
+import java.util.Random;
 
 public class QuestionAlternate {
 	

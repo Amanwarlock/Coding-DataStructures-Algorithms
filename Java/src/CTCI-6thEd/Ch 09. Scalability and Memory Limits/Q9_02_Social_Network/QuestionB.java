@@ -2,9 +2,7 @@ package Q9_02_Social_Network;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class QuestionB {
 

@@ -1,10 +1,6 @@
 package Introduction;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Vector;
+import java.util.*;
 
 public class IntroductionCollections {
 	public static void main(String[] args) {

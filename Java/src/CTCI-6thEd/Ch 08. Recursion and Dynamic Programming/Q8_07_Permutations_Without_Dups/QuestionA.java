@@ -1,6 +1,6 @@
 package Q8_07_Permutations_Without_Dups;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class QuestionA {
 

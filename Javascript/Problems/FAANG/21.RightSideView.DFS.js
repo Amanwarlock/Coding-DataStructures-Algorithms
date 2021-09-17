@@ -49,7 +49,7 @@ class TreeNode {
    */
   const dfs = (node, currentLevel, result) => {
     if(!node) return;
-    if(currentLevel >= result.length) {
+    if(currentLevel >= result.length) { 
       result.push(node.value);
     }
     // Pre-order DFS traversal in NRL order prioritizing right side of the tree

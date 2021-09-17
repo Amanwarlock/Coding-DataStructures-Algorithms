@@ -67,7 +67,7 @@ class TreeNode {
     while(count < height) { // contiue only till as deep as the tree's height; as we want to decide whether to turn left or right as long as we are within the height;
       const midOfNode = Math.ceil((left + right) / 2);
       
-      if(idxToFind >= midOfNode) {
+      if(idxToFind >= midOfNode) {// go right
         node = node.right;
         left = midOfNode;
       } else {

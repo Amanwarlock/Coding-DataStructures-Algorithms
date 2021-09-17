@@ -24,6 +24,12 @@
    [0, -1] //left
  ]
  
+
+ /**
+  * INF - count will always be smaller
+  * -1 (wall) - count will be always greater
+  * 0 (gate) - count will always be greater; except first time count = 0  which is equal to gate
+  */
  const dfs = (grid, row, col, count) => {
    if (row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || count > grid[row][col]) return
    grid[row][col] = count // initially count = 0; so replacing gate = 0 does not change anything

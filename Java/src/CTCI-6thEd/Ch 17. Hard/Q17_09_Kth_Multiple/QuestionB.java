@@ -1,7 +1,7 @@
 package Q17_09_Kth_Multiple;
 
-import java.util.Queue;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class QuestionB {
 

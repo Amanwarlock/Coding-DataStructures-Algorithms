@@ -40,3 +40,8 @@ console.log("Math.max from given array : ", Math.max(...arrx));
 /**
  * @description Math.abs in javascript ?
  */
+console.log("Math abs :", Math.abs(-2));
+
+/**
+ * @description Math.pow ??
+ */

@@ -1,7 +1,7 @@
 package Q17_08_Circus_Tower;
 
 import java.util.ArrayList;
-import java.util.*;
+import java.util.Collections;
 
 public class QuestionA {
 	public static ArrayList<HtWt> longestIncreasingSeq(ArrayList<HtWt> items) {
