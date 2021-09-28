@@ -28,4 +28,34 @@ function mergeSortedArrays(array1, array2){
     return mergedArray;
   }
 
+
+  function mergeSortedArrays2(arr1, arr2){
+    if(arr1.length === 0) return arr2;
+
+    if(arr2.length === 0 ) return arr1;
+
+    merged = [];
+
+    let i = 0;
+    let j = 0;
+
+    while(arr1[i] || arr2[j]){
+        if(arr2[j] === undefined || arr1[i] < arr2[j]){
+          merged.push(arr1[i]);
+          i++;
+        }else{
+          merged.push(arr2[j]);
+          j++;
+        }
+    }
+
+    return merged;
+
+  }
+
+
   console.log(mergeSortedArrays([99], [44]));
+
+
+
+  console.log(mergeSortedArrays2([99], [44]));

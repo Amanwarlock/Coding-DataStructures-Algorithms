@@ -29,6 +29,9 @@ class ListNode {
   
   // --------- Our solution -----------
   
+  /**
+   * @description FLOYD's tortoise and hare algorithm
+   */
   const findCycle = function(head) {
     if(!head) return null;
     
@@ -58,8 +61,44 @@ class ListNode {
     return p2 // or p1 as they both point to the same node
   };
   
-  console.log(findCycle(linkedList));
+  console.log("Method - 1: ", findCycle(linkedList));
 
 
 
   //  Floyd's Tortoise and hare algorithm
+
+
+function findCycle2(head){
+  let hare = head; // slow
+  let tortoise = head; // fast
+
+  while(hare !== null && hare.next !== null){
+    tortoise = tortoise.next;
+    hare = hare.next.next; // 2x speed
+
+    if(tortoise === hare){
+      break;
+    }
+  }
+
+  if(hare === null || hare.next === null){
+    // no loop detected;
+    return null;
+  }
+
+  let p1 = head;
+  let p2 = tortoise; // or hare
+
+  while(p1 !== p2){
+    p1 = p1.next;
+    p2 = p2.next;
+  }
+
+  return p1;
+}
+
+
+console.log("Method - 2: ", findCycle2(linkedList));
+
+
+

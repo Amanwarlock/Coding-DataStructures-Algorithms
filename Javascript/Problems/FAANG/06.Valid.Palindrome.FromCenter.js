@@ -9,6 +9,14 @@ const isValidPalindrome = function(s) {
     
     // initialize left/right pointers to point at the middle index of the string. Remember, indexes start at 0 meaning that we have to floor() the value from dividing length by 2 in order to get the index of the center.
     let left = Math.floor(s.length / 2), right = left;
+
+    /**
+     *          a  b  b  a -- even    4/2 = 2
+     *          0  1  2  3
+     * 
+     *          a  b  c  b  a --- odd  5/2 = 2
+     *          0  1  2  3  4
+     */
     
     // if the string is even, move left pointer back by 1 so left/right are pointing at the 2 middle values respectively.
     if(s.length % 2 === 0) {

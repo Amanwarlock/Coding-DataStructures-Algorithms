@@ -71,6 +71,7 @@ function isValidBST2(root){
   return checkBST(root, null, null);
 }
 
+// DFS approach - Pre-order traversal - NLR
 function checkBST(node, min, max){
   if(node === null) return true;
 

@@ -101,7 +101,7 @@ class TreeNode {
       const idxToFind = Math.ceil((left + right) / 2); // round up
       
       if(nodeExists(idxToFind, height, root)) {
-        left = idxToFind;
+        left = idxToFind; // don't lloose the reference to left, as this is the porinter of no no nodes in last level
       } else {
         right = idxToFind - 1;
       }

@@ -63,6 +63,29 @@ class TrieNode {
         return this.startsWith(prefix.substring(1), node.keys[prefix[0]]);
       }
     }
+
+    printAll(){
+      let result = [];
+      this.traverseDFS(this.root, result, '');
+      return result;
+    }
+
+    traverseDFS(node=this.root, result, str){
+      if(Object.keys(node.keys).length > 0){
+          //call all current nodes children keys
+          for(let letter of Object.keys(node.keys)){
+            this.traverseDFS(node.keys[letter], result, str.concat(letter));
+          }
+          // if the current node has end;
+          if(node.end){
+            result.push(str);
+          }
+      }else if(node.end){
+        // checking if its children keys have ends;
+        result.push(str);
+      }
+    }
+
   };
   
   const trie = new Trie();
@@ -74,3 +97,5 @@ class TrieNode {
   trie.insert("dog")
   trie.insert("app");
   console.log(trie.search("app"));     // returns true
+
+  console.log("All words : ", trie.printAll());

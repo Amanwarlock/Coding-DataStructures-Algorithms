@@ -84,44 +84,73 @@ const levelOrderBFS = function (root) {
   return result;
 };
 
+function levelOrderBFS2(root) {
+  if (root === null) return [];
 
-function levelOrderBFS2(root){
-  if(root === null) return [];
-  
   let results = [];
   let currValues = [];
   let queue = [root];
   let currSize = queue.length;
-  
-  while(queue.length > 0){
 
+  while (queue.length > 0) {
     let currNode = queue.shift();
-    currValues.push(currNode.value)
-    currSize --;
+    currValues.push(currNode.value);
+    currSize--;
 
-    if(currNode.left){
+    if (currNode.left) {
       queue.push(currNode.left);
     }
 
-    if(currNode.right){
+    if (currNode.right) {
       queue.push(currNode.right);
     }
     // This condition should be at the last only; otherwise the last level will not be added as the queue becomes empty. It comes out of while loop;
-    if(currSize <= 0){
+    if (currSize <= 0) {
       results.push(currValues);
       currValues = [];
       currSize = queue.length;
     }
-
   }
 
   return results;
 }
 
+/**
+ * @description: Efficient way
+ */
+function levelOrderBFS3(root) {
+  if (!root) return [];
+  
+  let results = [];
+  let currentLevel = [];
+  
+  currentLevel.push(root);
+
+  while(currentLevel.length){
+    results.push(currentLevel);
+    let parent = currentLevel;
+    currentLevel = [];
+    for(let node of parent){
+      if(node.left){
+        currentLevel.push(node.left);
+      }
+
+      if(node.right){
+        currentLevel.push(node.right);
+      }
+
+    }
+  }
+
+  return results;
+
+}
 
 console.log("BFS - 1 ::: ", levelOrderBFS(tree));
 
 console.log("BFS - 2 ::: ", levelOrderBFS2(tree));
+
+console.log("BFS - 3 ::: ", levelOrderBFS3(tree));
 
 //------------------------------------------------------------------------------------------------------------------------------
 

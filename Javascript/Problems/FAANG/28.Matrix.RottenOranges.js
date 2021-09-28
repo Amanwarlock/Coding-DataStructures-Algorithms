@@ -60,8 +60,8 @@ const testMatrix = [
       /**
        * This condition (currentQueueSize === 0) has to be on top for this problem
        * First iteration: 
-       *        > queue wont be empty and rest of the code pops from queue and also pushes neighbors which are fresh;
-       *        > If nothing is added to queue if there are no oranges to rot . Means no time consumed to rot. So queue is empty as nothing is added.
+       *        > queue wont be empty and rest of the code pops from queue and also pushes neighbors which are fresh; (firstly added oranges to queue are already rotten)
+       *        > If nothing is added to queue if there are no fresh oranges to rot . Means no time consumed to rot. So queue is empty as nothing is added.
        *        > in short - all oranges rooten, no fresh oranges left to rot.
        *        > In that case the outer while loop fails and minute is not incremented. As nothing is there to rot.
        *        > In case if queue in first itr is added, indicating there are oranges to rot. Increment minture count

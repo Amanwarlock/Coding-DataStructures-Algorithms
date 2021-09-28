@@ -1,55 +1,51 @@
-class ListNode {
-  constructor(val, next = null) {
-    this.val = val;
-    this.next = next;
-  }
-}
-// ---- Generate our linked list ----
-const linkedList = [5, 4, 3, 2, 1].reduce((acc, val) => new ListNode(val, acc), null);
+const input = [1, 0, 2, 1, 3]; // array of integers with each value between 0 - (n-1)
 
-const printList = (head) => {
-  if(!head) {
-    return;
-  }
+//const output = [1, 2, 1, 1, 0]; // array of the same length and at each index, the value is how many times that index occured in the input.
 
-  console.log(head.val);
-  printList(head.next);
-}
+/**
+ *  Input = [1, 0, 2, 1, 3]
+ *  Output = [1, 2, 1, 1, 0]
+ *  length = 5
+ * 
+ *  [1, 5, 2, 1, 3]  i=0
+ *  [6, 5, 2, 1, 3]  i=1
+ *  [6, 5, 7, 1, 3]  i=2
+ *  [6, 10, 7, 1, 3] i=3
+ *  [6, 10, 7, 6, 3] i=4
+ * 
+ *  Now divide by 5 to arrive at occurence. Also take modulo of num[i] % with length of array to arrive at origina; number back
+ * 
+ *  ans: [1, 2, 1, 1, 0] after dividing each element with 5
+ */
 
 
-function reverseBetween(head, m, n){
-  let currentPos = 1;
-  let currentNode = head;
-  let start = head;
-
-  while(currentPos < m){
-    start = currentNode;
-    currentNode = currentNode.next;
-    currentPos++;
-  }
-
-  let newList = null;
-  let tail = currentNode;
-
-  while(currentPos >= m && currentPos <= n){
-    let next = currentNode.next;
-    currentNode.next = newList;
-    newList = currentNode;
-    currentNode = next;
-    currentPos++;
-  }
-
-    start.next = newList;
-    tail.next = currentNode;
-
-    if(m === 1) return newList;
-    else return head;
-
+function occurence(arr){
+    let occurence = new Array(arr.length).fill(0); //
+    
+    for(let i = 0; i< arr.length; i++){
+        occurence[arr[i]] ++;
+    };
+    return occurence;
 }
 
-printList(linkedList);
-console.log('after reverse');
+// 0 % 5  = 0
 
-printList(reverseBetween(linkedList, 1, 5));
+//  
 
-//console.log("Res : ", almostPalidrome(string));
+//console.log("Result: ", occurence(input));
+
+
+/**
+ * S : O()
+ */
+
+function occurence2(arr){
+    for(let i = 0; i< arr.length; i++){
+        arr[i]++;
+    };
+
+    return arr;
+}
+
+
+console.log("Result: ", occurence2(input));
