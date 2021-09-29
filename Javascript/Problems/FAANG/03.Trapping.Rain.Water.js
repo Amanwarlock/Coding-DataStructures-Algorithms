@@ -1,3 +1,23 @@
+
+/**
+ *  See the example array and elevation map below.
+**                                 ___
+**             ___                |   |        ___
+**            |   |        ___    |   |___    |   |
+**         ___|   |    ___|   |   |   |   |   |   |
+**     ___|___|___|___|___|___|___|___|___|___|___|___
+**     {0,  1,  3,  0,  1,  2,  0,  4,  2,  0,  3,  0}
+**                                 ___
+**             ___                |   |        ___
+**            |   | *   *  _*_  * |   |_*_  * |   |
+**         ___|   | *  _*_|   | * |   |   | * |   |
+**     ___|___|___|_*_|___|___|_*_|___|___|_*_|___|___
+**     {0,  1,  3,  0,  1,  2,  0,  4,  2,  0,  3,  0}
+**
+**     Solution: In this example 13 units of snow (*) could be captured.
+ */
+
+
 const elevationArray = [0, 1, 0, 2, 1, 0, 3, 1, 0, 1, 2]
 
 const getTrappedRainwater = function(heights) {

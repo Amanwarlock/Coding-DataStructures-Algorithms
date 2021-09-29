@@ -14,7 +14,9 @@ const t = [[1, 4, 2], [1, 2, 9], [4, 2, -4], [2, 5, -3], [4, 5, 6],[3, 2, 3], [5
 
 
 /**
- * Bellman-Ford : Used for DAG with negative weights and when no negative cycles present;
+ * Bellman-Ford : Used for DAG with negative weights and when no negative cycles present; It uses dynamic programming
+ * Bellman-ford can also be used to detect negative cycles. If question asked to detect negative cycles, use bellman ford
+ * Bellman-ford can detect negative cycle, but it does not work when there are negative cycles
  * T: O(N*E)
  * S: O(N)
  */
@@ -22,9 +24,11 @@ var networkDelayTime = function(times, N, k) {
   const distances = new Array(N).fill(Infinity);
   
   distances[k - 1] = 0;
-  for(let i = 0; i < N - 1; i++) {
-    let count = 0;
-    for(let j = 0; j < times.length; j++) {
+  for(let i = 0; i < N - 1; i++) { // bellman ford requires to maintain information of all the nodes in the graph, where as Disjkstra only need information of neighbors
+    // So in bellman ford, if there are N nodes, we need to iterate N-1 times
+    // Also while iterating we need to track if in current or previous iteration if value in distance array is updated, if value is not updated in curr iteration, then stop
+    let count = 0; // to keep tack if any value is updated in the distances array; if nothing updated then break
+    for(let j = 0; j < times.length; j++) { // adjacency list creation is skipped to save space
       const source = times[j][0];
       const target = times[j][1];
       const weight = times[j][2];
@@ -35,7 +39,7 @@ var networkDelayTime = function(times, N, k) {
       }
     }
     
-    if(count === 0) break;
+    if(count === 0) break; // If no value is updated in distances array with the prev iteration then no need to check for N-1 nodes, all distances are minimized, break out
   }
   
   const ans = Math.max(...distances);

@@ -47,7 +47,7 @@ const canFinishWithAdj = function(n, prerequisites) {
     const current = stack.pop();
     count++;
     
-    const adjacent = adjList[current];
+    const adjacent = adjList[current]; // get the children of the course
 
     for(let i = 0; i < adjacent.length; i++) {
       const next = adjacent[i];
