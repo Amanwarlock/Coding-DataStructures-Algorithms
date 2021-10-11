@@ -1,5 +1,15 @@
 
 /**
+ * 
+ * @description https://leetcode.com/problems/trapping-rain-water/
+ * 
+ * Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
+ * 
+ * Given an array of non-negative integers representing the elevations
+**     from the vertical cross section of a range of hills, determine how
+**     many units of snow could be captured between the hills. 
+ * 
+ * 
  *  See the example array and elevation map below.
 **                                 ___
 **             ___                |   |        ___

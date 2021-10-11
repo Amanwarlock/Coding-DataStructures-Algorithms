@@ -63,7 +63,7 @@ const DIRECTIONS = [
       res += recurse(N, K - 1, r + dir[0], c + dir[1], dp) / 8;
     }
   
-    dp[K][r][c] = res;
+    dp[K][r][c] = res; // note is dp, we are storing the entire grid result after computing for all possible directions so that we don't have to do again for 8 possible dir
   
     return dp[K][r][c];
   };
@@ -75,7 +75,8 @@ const DIRECTIONS = [
    */
   var knightProbability = function(N, K, r, c) {
     const dp = new Array(K + 1).fill(0).map(() => new Array(N).fill(0).map(() => new Array(N).fill(undefined))); // making NxN matrix for k = 0,1,2..k
-  
+    // why k+1 for array size? Array is indexed at zero but our steps are not. If k = 2, then array is 0 1 2, but if we do k + 1, then arr is 0 1 2 3,
+    // k=1 arr=1, k=2, arr=2 so we can skip index 0 and match our steps with arr indexes
     return recurse(N, K, r, c, dp);
   };
   

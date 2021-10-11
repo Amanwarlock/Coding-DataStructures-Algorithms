@@ -31,11 +31,35 @@ const minCostClimbingStairs = function(cost) {
   
   const minCost = function(i, cost) {
     if(i < 0) return 0;
-    if(i === 0 || i === 1) return cost[i];
+    if(i === 0 || i === 1) return cost[i]; // our intial steps can either be from 0 index or 1 index in cost array. For initial steps cost is known as there is no previous dependency
     return cost[i] + Math.min(minCost(i - 1, cost), minCost(i - 2, cost));
   }
   
   console.log(minCostClimbingStairs([20, 15, 30, 5]))
+
+
+
+  /**
+   * @description TOP-DOWN with Memoization 
+   */
+  const minCostClimbingStairs2 = function(cost) {
+    const n = cost.length;
+    const dp = [];
+    return Math.min(minCost2(n - 1, cost, dp), minCost2(n - 2, cost, dp));
+  };
+  
+  const minCost2 = function(i, cost, dp) {
+    if(i < 0) return 0;
+    if(i === 0 || i === 1) return cost[i]; // our intial steps can either be from 0 index or 1 index in cost array. For initial steps cost is known as there is no previous dependency
+    
+    if(dp[i] !== undefined) {
+      return dp[i];
+    }
+    dp[i] = cost[i] + Math.min(minCost2(i - 1, cost, dp), minCost2(i - 2, cost, dp));
+    return dp[i];
+  }
+  
+  console.log(minCostClimbingStairs2([20, 15, 30, 5]))
 
 
   /**
@@ -43,7 +67,7 @@ const minCostClimbingStairs = function(cost) {
    * T: O(n)
    * S: O(n)
    */
-   const minCostClimbingStairs2 = function(cost) {
+   const minCostClimbingStairs3 = function(cost) {
     const n = cost.length;
     if(n === 0) return 0; // when cost array is empty
     if(n === 1) return cost[0]; // when cost array is of size 1;
@@ -59,7 +83,7 @@ const minCostClimbingStairs = function(cost) {
     return Math.min(dp[n - 1], dp[n - 2]);
   };
   
-  console.log(minCostClimbingStairs2([20, 15, 30, 5]))
+  console.log(minCostClimbingStairs3([20, 15, 30, 5]))
 
 
 
@@ -68,10 +92,10 @@ const minCostClimbingStairs = function(cost) {
    * T: O(n)
    * S: O(1)
    */
-   const minCostClimbingStairs3 = function(cost) {
+   const minCostClimbingStairs4 = function(cost) {
     const n = cost.length;
-    if(n === 0) return 0;
-    if(n === 1) return cost[0];
+    if(n === 0) return 0; // when cost array is empty
+    if(n === 1) return cost[0]; // when cost array is of size 1;
     let dpOne = cost[0];
     let dpTwo = cost[1];
     for(let i = 2; i < n; i++) {
@@ -83,4 +107,4 @@ const minCostClimbingStairs = function(cost) {
     return Math.min(dpOne, dpTwo);
   };
   
-  console.log(minCostClimbingStairs3([20, 15]))
+  console.log(minCostClimbingStairs4([20, 15, 30, 5]))

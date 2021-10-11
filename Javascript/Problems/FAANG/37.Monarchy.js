@@ -32,6 +32,7 @@ class Person {
       person.isAlive = false;
     }
   
+    // pre-order traversal
     _dfs(currentPerson, order) {
       if (currentPerson.isAlive) {
         order.push(currentPerson.name);

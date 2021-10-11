@@ -47,7 +47,7 @@
    
    for(let employee = 0; employee < n; employee++) {
      const manager = managers[employee];
-     if(manager === -1) continue;
+     if(manager === -1) continue; // means the employee doesnot have any manager
      
      adjList[manager].push(employee); // establish manager ID --> to employees relationship;
    }

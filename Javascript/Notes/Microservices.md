@@ -25,6 +25,12 @@
     > These applications also run on the single server.
     > The program logic was also tightly coupled
 
+
+## Service Discovery:
+    > Two ways in microservice architecture:
+        1. Service Registry
+        2. Service Mesh
+
 ## Service Registry:
     > As in microservices the tasks / entities are split across different services, there should be a way to discover them
     > All microservices are registered with the service registry (ex redis) (end point information is stored for routing request. Services need to query it to get the endpoint)

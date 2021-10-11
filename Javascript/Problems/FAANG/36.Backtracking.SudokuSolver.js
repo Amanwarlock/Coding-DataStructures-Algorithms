@@ -12,6 +12,15 @@ The '.' character indicates empty cells.
  * 
  */
 
+/**
+ *  ## NOTE:
+ *    > when to prefer backtracking:
+ *        > When asked for all solutions
+ *        > or Return valid solution amongst all solutions
+ * 
+ *    > Backtracking is different from optimization problems where we find either min or max value of multiple branches
+ */
+
 
 const getBoxId = function (row, col) {
     const rowVal = Math.floor(row / 3) * 3; // row ofset -- 
@@ -35,11 +44,11 @@ const getBoxId = function (row, col) {
    */
    const solveBacktrack = function (board, boxes, rows, cols, r, c) {
     if (r === board.length || c === board[0].length) {
-      return true;
+      return true; // the backtracking function depends on boolean flag to whether continue or not
     } else {
       if (board[r][c] === '.') {
         for (let num = 1; num <= 9; num++) {
-          const numVal = num.toString();
+          const numVal = num.toString(); // optional to convert to string;
           board[r][c] = numVal;
   
           const boxId = getBoxId(r, c);
@@ -54,7 +63,7 @@ const getBoxId = function (row, col) {
   
             if (c === board[0].length - 1) {
               if (solveBacktrack(board, boxes, rows, cols, r + 1, 0)) {
-                return true;
+                return true; // propogate all the way up popping all funcs from call stack and end the program as we finished the board
               }
             } else {
               if (solveBacktrack(board, boxes, rows, cols, r, c + 1)) {
@@ -69,9 +78,9 @@ const getBoxId = function (row, col) {
   
           board[r][c] = '.';
         }
-      } else {
+      } else { // if board with current row and col is not a dot and there is a number just recurse to next row or col
         if (c === board[0].length - 1) {
-          if (solveBacktrack(board, boxes, rows, cols, r + 1, 0)) {
+          if (solveBacktrack(board, boxes, rows, cols, r + 1, 0)) { // go to next row with begining col;
             return true;
           }
         } else {
@@ -87,7 +96,7 @@ const getBoxId = function (row, col) {
   
   var solveSudoku = function(board) {
     const n = board.length;
-    const boxes = new Array(n), 
+    const boxes = new Array(n), // hash maps to check if value is used before
           rows = new Array(n), 
           cols = new Array(n);
     

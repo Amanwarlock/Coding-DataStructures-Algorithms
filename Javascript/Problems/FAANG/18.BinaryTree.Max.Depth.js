@@ -53,7 +53,7 @@ var maxDepth = function (node, currentDepth) {
 
 var maxDepth2 = function (node) {
   if (node === null) return -1;
-  return Math.max(maxDepth2(node.left, maxDepth2(node.right))) + 1;
+  return Math.max(maxDepth2(node.left), maxDepth2(node.right)) + 1;
 };
 
 console.log(" Max depth 1 result : ",maxDepth(root, 0));
