@@ -66,3 +66,39 @@ function groupAnagrams2(arr){
 }
 
 console.log("Group Anagrams 2 ::: ", groupAnagrams2(arr));
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+/**
+ * @description METHOD-2
+ */
+ class HashMapList extends Map {
+
+    set(key, value){
+      if(!super.has(key)){
+        super.set(key, []);
+      }
+      super.get(key).push(value);
+    }
+  
+  }
+
+  function groupAnagrams3(arr){
+
+        let groupedArr = [];
+        const myHashList = new HashMapList();
+
+        for(let word of arr){
+            let key = sortChars(word);
+            myHashList.set(key, word);
+        }
+
+        for(let key of myHashList.keys()){
+            groupedArr = groupedArr.concat(myHashList.get(key))
+        };
+
+        return groupedArr;
+  }
+
+
+  console.log("Group Anagrams 3 ::: ", groupAnagrams3(arr));

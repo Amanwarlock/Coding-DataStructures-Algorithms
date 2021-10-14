@@ -78,6 +78,10 @@
         > map.entries() - [key, value]
 
  
+   ## Object
+      > Object.keys()
+      > Object.clone()
+      > Object.hasOwnProperty()
  
  /**
  * MISCELLANEOUS

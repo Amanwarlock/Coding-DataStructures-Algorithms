@@ -64,6 +64,8 @@
     
         [In this paper, we will be focusing on discussing the SVM based and Neural Network based placement refinement techniques]
 
+Proposed Method - 1 : SVM based Placement Refinement [1]
+
     > In the SVM based approach [1]
         (Diagram Fig.1 overview of flow {from paper-1})
 
@@ -80,6 +82,7 @@
 
         [
             - For this, the design is dividing into square bins of sizes 4 by 4 micro meter.
+            - The cells are standard cells as specified by 65 nano meter library
             - The classification task performed by ML models is binary classification
             - Therefore, each bins are lableled using 0 and 1 where 0 indicates no short violation inside that bin and 1 represents that the data bin has violations
             - The features that are extracted and used for training involves informations such as:
@@ -89,10 +92,119 @@
                 4. Pin area and characteristics of local placement
         ]
 
+    
+    (Fig 4 overall flow {paper-1})
+
+    [
+        - This diagram shows the over all flow and design architecture
+        - First, in the initial placement stage, The RTL code is synthesised to generate Netlist.
+        - Then the VDA placer is used to obtain initial location of each cell 
+        - This result is fed to the refinement placement stage, where refinement happens before detailed routing in iterations
+        - If each iteration short violations are checked and cell positions are adjusted
+        - At the end of each iteration, number of short violations are checked, if violations decreases, more iterations are performed to get better results otherwise
+        the process is terminated
+        - Then with these refined placement results, detailed routing can be performed
+    ]
+
+
+    Proposed Method - II Neural Network based placement refinement [2]
+
+        - Deep learning based machine learning algorithm is used 
+            [ In this method Deep learning is used as compared to SVM in the previous approach]
+        - The methodology and flow of experiment is same as the previous approach
+            [
+                - The flow chart discussed earlier holds good here as well
+                - Because only differemt ML is used
+                - Instead of bins, the design is divided into Tiles
+            ]
+        - The data is normalized during feature gathering
+            [- The data is scaled using the normalization technique]
+        - The neural network model has following hyperparameters:
+            [Following model specifications are considered for the design]
+            - Total of five layers  - 
+                [
+                    one I/p layer, 
+                    one O/P layer
+                    and three hidden layers
+                ] 
+            - 43 neurons in Input layer
+                [The input layer consisted of 43 neurons]
+            - Each hidden layer consisted of 100 neurons
+                [
+                    A 100 neurons was used in each of the hidden layer
+                ]
+            - ReLU activation function
+                [
+                    In the hidden layers, the ReLU activation function is used
+                ]
+        - For training TensorFlow is used
+            [
+                The models were trained and tested using the TensorFlow machine learning framework
+            ]
 ## Results
 
+    
+Method-1 SVM based Placement Refinement Results [1]
+        > The placements were evaluated using Cadence Innovus EDA tool
+        > The metrics used for evaluation are:
+            1. True-Positive rate (TPR)
+            2. Specificity (SPC)
+            3. Accuracy (ACC)
+            4. Matthews Correlation Coefficient (MCC)
 
+        [But we will evaluate results using the True positive metric for this presentation]
+
+    (Insert Table -1  Benchmark Testcases {paper-1})
+
+    [
+        - This table shows the design specs used for study
+    ]
+
+    (Insert table-2 Prediction results (Binary Prediction model))
+
+    [
+        - Comparing the TPR, we can observe that the highest true-positive rate is for FFT design which about 94%
+    ]
+
+    (Insert table 3 {paper-1})
+
+    [
+        - This table compares the detection rate of VDA placer Vs the  refinement method
+        - It can be observed that in case of the 1st and 2nd design there is no improvement in short violations. Author explaines this could be due to high utilization of these designs (i,e more iterations performed for refinement)
+        - Where as for the 3rd design, significant improvement can be observed in detecting short violations
+    ]
+
+Method-2 Deep learning based Refinement Results [2]
+
+    [
+        - Same metrics are used here for evaluation
+    ]
+
+    - The model could predict about 98% of the violations
+
+        (Make this table in PPT)
+
+        Desing                      TPR (%)             ACC
+
+        mgc_des_perf_1              100                 88
+        mgc_fft_1                   100                 97
+        mgc_matrix_mul              96                  93
 ## Conclusion
+
+    - The methods detects areas in circuits prone to short violations
+        [
+            The methods discussed in this presentation, successfully detect violations in pre placement stage
+        ]
+    - The proposed machine learning based approaches demonstrate significant performance boost during detailed routing
+        [
+            The machine learning based placement refinement significantly reduces the run time during placement and routing
+        ]
+    - The results demonstrate that the performance of Neural Network based architecture is better
+        [
+            From the results it can be observed that the Neural network based design performed better than the SVM based model in terms of TPR and accuracy
+        ]
+
+    - The neural network based model can predict violations 14 times faster with smaller designs and up to 96 times faster with larger designs
 
 ## References
 
@@ -105,3 +217,8 @@
     4. Z. Qi, Y. Cai, and Q. Zhou, “Accurate prediction of detailed routing congestion using supervised data learning,” in 2014 IEEE 32nd International Conference on Computer Design (ICCD), pp. 97–103, 2014.
 
     5. J. Westra, C. Bartels, and P. Groeneveld, “Probabilistic Congestion Prediction,” in Proc. ISPD, p. 204–209, 2004.
+
+
+
+
+.https://inst.eecs.berkeley.edu/~cs152/sp05/handouts/lab_3.html
