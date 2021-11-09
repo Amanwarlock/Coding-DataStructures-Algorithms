@@ -129,6 +129,16 @@
 
 
 
+## RabbitMQ Architecture (With AMQP)
+    > Published connects to rabbitmq server which is a two-way communication (default port 5672)
+    > It uses TCP/IP instead of http for communication
+    > Even the consumer establishes a two-way communication with the server
+    > Server pushes the messages to consumer (Not polling like in Kafka)
+    > A channel is a logical connection. It is possible to have one consumer with multiple channels having same TCP connection 
+        (i.e. multiplexing) instead of having mulitple consumers with different channels
+
+
+
 
 ## Installation
     > Use the CloudAMQP free service

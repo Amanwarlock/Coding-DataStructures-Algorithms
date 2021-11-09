@@ -1,5 +1,15 @@
 # Python
 
+## Resources:
+    > https://zerotomastery.io/cheatsheets/python-cheat-sheet/?utm_source=udemy&utm_medium=coursecontent
+    > https://github.com/gto76/python-cheatsheet
+
+## Concepts:
+    > Abstract classes --> https://www.youtube.com/watch?v=UDmJGvM-OUw
+
+## Git
+    > https://github.com/Pierian-Data/Complete-Python-3-Bootcamp
+
 ## What is Python?
     > Object oriented and interpreted language
     > Python is strongly typed (i.e, adding number and string gives an error)
@@ -12,6 +22,27 @@
     > No spaces allowed - use _ to separate names
     > No special characters allowed
     > names are lower case
+
+    PEP8: Style and Naming Conventions
+        > Variables and Function names
+            - Variables and function names should be lower case
+            - If multiword names, then separate them with _ ex: my_var, my_calc
+
+        > Constants
+            - use uppercase for constants and separate them with _ in case of multiword
+
+        > Classes
+            - For classes use ex: MyClass, StudentModel etc
+        
+        >  Modules
+            - name modules using lowercase and separated by underscore. e.g: my_module.py
+
+        > Packages
+            - name packages with lowercase and no separations. e.g mypackage
+
+## Comments
+    > Single line comments - #
+    > Multi-line comments - """ <comment goes here> """
 ## Data Types
     1. Numeric - Int, Float, Complex
     2. Iterator
@@ -30,6 +61,8 @@
     > Sets - {"a", "b"} (Unordered collection of unique objects)
     > Boolean - True or False
     > Null / undefined - None
+
+    NOte: In short remember - Int, Float, Bool, Str, list, tuple, set, dict
 
 ## Operators
     > Add - +
@@ -216,9 +249,13 @@
     > > , <, >=, <=
 
 ## Logical Operators
-    > and, or, not - keywords
+    > and, or, not - keywords 
     > 2 ==2 and 3 < 4
     > not 2 == 2  --> similar to ! 2==2 in javascript
+
+## Bitwise Operators
+    > &
+    > >>, >>>
 
 ## Control Flow
     > if <condition> : , elif <condition> : , else : 
@@ -309,6 +346,9 @@
 
         # create instance of class
         $ my_dog = Animal(name="Lab")        
+
+## Error Handling
+    > try: , except: , else: , finally:
 
 
 ## Miscellaneous

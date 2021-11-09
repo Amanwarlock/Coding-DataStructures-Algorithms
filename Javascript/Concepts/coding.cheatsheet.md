@@ -49,6 +49,9 @@
     > arr.shift()
     > arr.unshift()
     > arr.sort(), arr.sort((x,y) => /* custom implementation*/)
+    > In arrays for sorting:
+      - Default sort supports lexographical sort (works on strings)
+      - For numerical sort always provide a compare function for ex: [-1,0,1,2,-1,-4].sort((x,y)=> x-y)
     > arr.reverse()
     > arr.concat(arr)
     > arr.slice()

@@ -1,5 +1,9 @@
 # Microservices Architecture
 
+## Blogs
+    > https://medium.com/@WSO2/guidelines-for-designing-microservices-71ee1997776c
+    > https://www.youtube.com/watch?v=CZ3wIuvmHeM
+
 ## Basic Principles
     > One microservice should be responsible for addressing only one concern (should do only one task)
     > It should be possible to develop and deploy a microservice completely independent from all other parts of an application

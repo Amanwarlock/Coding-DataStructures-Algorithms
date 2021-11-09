@@ -1,36 +1,16 @@
-const arr = [
-  "apple",
-  "banana",
-  "carrot",
-  "ele",
-  "duck",
-  "papel",
-  "tarroc",
-  "cudk",
-  "eel",
-  "lee",
-];
 
-function groupAnagrams(arr) {
-  arr.sort((x, y) => {
-    let s1 = sortChars(x);
-    let s2 = sortChars(y);
 
-    if (s1 < s2) {
-      return -1;
-    } else if (s1 > s2) {
-      return 1;
-    } else {
-      return 0;
-    }
-  });
-  return arr;
-}
+let str = "";
 
-function sortChars(str) {
-  let clone = new String(str);
-  clone = clone.split("").sort().join();
-  return clone;
-}
+let str1 = " ";
 
-console.log(groupAnagrams(arr));
+let str2 = "AMan ";
+
+let str3 = " Aman";
+
+let str4 = " Aman ";
+
+console.log(str.trim().toLowerCase().length);
+
+
+console.log(Number.MAX_SAFE_INTEGER);

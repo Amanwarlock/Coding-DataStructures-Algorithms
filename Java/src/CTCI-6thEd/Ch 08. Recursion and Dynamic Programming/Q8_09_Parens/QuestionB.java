@@ -26,7 +26,7 @@ public class QuestionB {
 	}
 	
 	public static void main(String[] args) {
-		ArrayList<String> list = generateParens(6);
+		ArrayList<String> list = generateParens(2);
 		for (String s : list) {
 			System.out.println(s);
 		}

@@ -61,13 +61,21 @@
     > npx is included in recent version of npm 
     
     > package.json - it is a central repository for all over project related dependencies / libraries / packages
-        - if you write ~0.13.0, you want to only update patch releases: 0.13.1 is ok, but 0.14.0 is not.
-        - if you write ^0.13.0, you want to get updates that do not change the leftmost non-zero number: 0.13.1, 0.13.2 and so on. If you write ^1.13.0, you will get     patch and minor releases: 1.13.1, 1.14.0 and so on up to 2.0.0 but not 2.0.0.
+        - if you write ~0.13.0, you want to only update patch releases: 0.13.1 is ok, but 0.14.0 is not. (accepts only patch updates)
+        - if you write ^0.13.0, you want to get updates that do not change the leftmost non-zero number: 0.13.1, 0.13.2 and so on. 
+          If you write ^1.13.0, you will get patch and minor releases: 1.13.1, 1.14.0 and so on up to 2.0.0 but not 2.0.0.
         - if you write 0.13.0, that is the exact version that will be used, always
-    > There is a problem with package.json. If another person trying to initialize the project by running npm install on a different machine, and dependencies specified    with ~ or ^, syntax will be installed if a patch release of the package is available. This might induce bugs
+
+    > Prefixes for semantic versioning:
+        1. ~ --> Tilde
+        2. ^ --> Caret 
+
+    > There is a problem with package.json. If another person trying to initialize the project by running npm install on a different machine, and dependencies specified    
+        with ~ or ^, syntax will be installed if a patch release of the package is available. This might induce bugs
     > package-lock.json - It keeps track of exact version of every package that is installed
     > The package-lock.json solves this problem. It sets the currently installed packages versions in stone and npm will use those exact versions when running
-        npm install
+        npm install  (https://www.youtube.com/watch?v=9xaKQi9-VTI)
+    > Package-lock.json locks the library versions as well as the any sub dependencies of those libraries as well
     > npm update will update the versions in the package-lock.json file
     
     > list installed npm packages:
@@ -93,6 +101,7 @@
     > First digit (x) is the major version
     > Second digit (y) is the minor version
     > Third digit (z) is the patch version 
+    
 
 ## Event Loop:
     > Node.js asynchronous and non-blocking concept can be explained using event loop

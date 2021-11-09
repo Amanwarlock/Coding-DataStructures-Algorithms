@@ -2,7 +2,7 @@
 # Redis Notes
 
 ## Intro
-    > Redis is built for UNIX based systems like Max, Linux etc
+    > Redis is built for UNIX based systems like Mac, Linux etc
     > Its also available for windows, but using docker is the best option
 
 ## Data Types

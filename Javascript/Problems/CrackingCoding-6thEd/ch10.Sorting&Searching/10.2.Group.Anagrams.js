@@ -25,7 +25,7 @@ function groupAnagrams1(arr){
     return arr;
 }
 
-console.log("Group Anagrams 1 ::: ", groupAnagrams1(arr));
+console.log("Group Anagrams 1 ::: ", groupAnagrams1([...arr]));
 
 //--------------------------------------------------------------------------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ function groupAnagrams2(arr){
     return newArr;
 }
 
-console.log("Group Anagrams 2 ::: ", groupAnagrams2(arr));
+console.log("Group Anagrams 2 ::: ", groupAnagrams2([...arr]));
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -101,4 +101,4 @@ console.log("Group Anagrams 2 ::: ", groupAnagrams2(arr));
   }
 
 
-  console.log("Group Anagrams 3 ::: ", groupAnagrams3(arr));
+  console.log("Group Anagrams 3 ::: ", groupAnagrams3([...arr]));
