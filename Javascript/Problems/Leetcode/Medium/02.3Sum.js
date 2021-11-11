@@ -12,7 +12,7 @@
     
     let result = [];
     
-    nums.sort((x,y) => x-y);
+    nums.sort((x,y) => x-y); // javascript supports lexicographical sort, for numbers you must do this way
     
     for(i = 0; i< nums.length - 2; i++){
         if(i == 0 || (i > 0 && nums[i] !== nums[i-1]) ){

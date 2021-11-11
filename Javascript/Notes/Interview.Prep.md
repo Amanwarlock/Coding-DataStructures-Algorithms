@@ -73,3 +73,14 @@
 ## Hiring Manager Round / Team Fit
     > https://www.indeed.com/career-advice/interviewing/managerial-round-interview-questions
     > https://www.indeed.com/career-advice/interviewing/software-engineer-behavioral-interview-questions
+
+
+## Current Interviews:
+
+    1. Cisco - webex 
+    2. Tesla - online assessment - ANgular, Javascript
+    3. Volvo - online assessment - Java
+    4. Intel - Python, react
+    5. Intel - Manufacturing - Phone Screen
+    6. Splunk
+    7. Virgin Hyperloop one

@@ -69,8 +69,8 @@ class ListNode {
 
 
 function findCycle2(head){
-  let hare = head; // slow
-  let tortoise = head; // fast
+  let hare = head; // fast
+  let tortoise = head; // slow
 
   while(hare !== null && hare.next !== null){
     tortoise = tortoise.next;

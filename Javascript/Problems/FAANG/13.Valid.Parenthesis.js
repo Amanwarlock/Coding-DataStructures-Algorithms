@@ -27,7 +27,7 @@ var isValid = function(s) {
     }
   }
   
-  return stack.length === 0;
+  return stack.length === 0; // check if all the brackets are closed
 };
 
 console.log(isValid(string));

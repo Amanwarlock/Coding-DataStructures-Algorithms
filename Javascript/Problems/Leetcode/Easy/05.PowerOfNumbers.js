@@ -24,6 +24,11 @@ function power(x, y, start, end, result){
     return result;
 }
 
+
+/**
+ * x = base
+ * y = exponent
+ */
 function cal(x,y){
 
     if(x === 0) return 0;
