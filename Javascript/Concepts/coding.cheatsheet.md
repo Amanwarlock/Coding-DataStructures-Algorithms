@@ -46,8 +46,12 @@
  /**
  * ARRAYS
  */
-    > arr.shift()
-    > arr.unshift()
+    > Create array
+      - Fixed size: new Array(5).fill(0)
+      - arr.length
+       
+    >arr.shift() --> pop from head / first 
+    > arr.unshift() --> push to head
     > arr.sort(), arr.sort((x,y) => /* custom implementation*/)
     > In arrays for sorting:
       - Default sort supports lexographical sort (works on strings)

@@ -1,48 +1,11 @@
-
-// T: O(Y) S: O(1) ---> O(logN) --> Mathematical logical
-// T -- > S ++
-// [2,2, 2,2] 2,4 
-
-
-
-function power(x, y, start, end, result){
-    if( end < start) return result;
-
-    let mid = Math.floor((start+end)/2);  
-
-    result *= x;
-
-    result = power(x,y,start,mid-1, result); // 1,1 
-
-    //console.log(`Res1 --> ${res1} --> Start ${start} --> end ${end} --> mid ${mid}}`);
-
-    result = power(x,y,mid+1,end, result); 
-
-    
-    return result;
-}
-
-function cal(x,y){
-
-    if(x === 0) return 0;
-    if(y === 0) return 1;
-    
-    if(y < 0){
-        return 1/power(x, Math.abs(y), 1, Math.abs(y), 1);
-    }else{
-        return power(x,y, 1, y, 1);
-    }
-}
-
-
-console.log(cal(2,-2));
-
+console.log(new Array(3).fill(0).length);
 
 /**
  * 
- *                                             fn(2,4,1,4)
- *                         mid= 2  fn(2,4,1,1)           fn(2,4,3,4)
- *            mid = 1   fn(2,4,1,0)       fn(2,4,2,1)               fn(2,4,3,2)  fn(2,4, 4,4)
- *                                                                                  fn (2,4, 4,3) fn(2,4,5,4)
- *                                      
+ * 
+ *  [4, 2, 3, 7]  x=2, y=2, ans - 7
+ * 
+ *  sort- [2, 3, 4, 7]
+ *
+ *  2 
  */
