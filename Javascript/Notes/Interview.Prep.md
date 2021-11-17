@@ -84,3 +84,40 @@
     5. Intel - Manufacturing - Phone Screen
     6. Splunk
     7. Virgin Hyperloop one
+
+
+
+
+    Javascript      Angular     Docker          Microservices       SDLC        Behavioral 
+    Python          React       RabbitMQ        System Design       Agile
+    Node.js                     Kafka
+    Java                        Redis
+                                MongoDB
+
+    Routine - Revise Problems + New Problems + System design + Angular / react + programming lang + DevOps + Architecture + Behavioral 
+
+> RDBMS vs NoSQL comparison
+
+> Promises vs Async await Vs Observables
+
+> How to choose language for project. Node.js vs Python vs Java vs Golang
+
+> Angular vs React
+
+> Typescript vs Javascript
+
+> Websockets vs HTTP vs Long Polling vs Server Side Events
+
+> What is API gateway?
+
+> How to design a caching system
+
+> How to monitor microservices and logging 
+
+> What is SSR server side rendering
+
+> What is monorepo? Nrwl
+
+> Micro frontends ?
+
+> Why to use docker? what is the advantage?

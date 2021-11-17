@@ -1,3 +1,15 @@
+# Coding and Problem Solving
+
+## Resources
+
+
+## YouTube Channels
+
+    > Neet Code: https://www.youtube.com/c/NeetCode/playlists
+
+    > Tech Dose: https://www.youtube.com/c/TECHDOSE4u/playlists
+
+    > Back to Back SWE: https://www.youtube.com/c/BackToBackSWE/playlists
 
 ## Leetcode Problems:
 

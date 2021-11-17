@@ -71,6 +71,13 @@
     > max(arr)
     > sum(arr)
     > arr1.extent(arr2) 
+
+    > Add:
+        - arr.append(item)
+
+    > Pop:
+        - arr.pop() --> from last
+        - arr.pop(index) --> by position
     
     > Create a m x n matrix: let m = 3, n = 3
             $ matrix = [[False] * n] * m
@@ -78,6 +85,8 @@
     > Fill arrays of fixed size
             $ [False] * 5
             $ [i for i in range(5)]
+
+    > Clone list: arr.copy()
 
 ## Dictionaries
 
