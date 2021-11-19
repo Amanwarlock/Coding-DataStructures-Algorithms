@@ -30,7 +30,7 @@
             import {Input} from '@angular/core';
             // component
             export class Item{
-                Input() element: {name: string, description: string};
+                @Input() element: {name: string, description: string};
             }
 
             // In HTML
@@ -458,3 +458,25 @@
     > Component
         > Generating a component using CLI
             - ng g c <path/name> --module=<module-name> --skip-tests --flat --dry-run
+
+
+
+## QUESTIONS
+
+    > Difference between RxJS and Promises
+
+    > What are Tree shakable components
+
+    > Explain JIT (Just in time) and AOT compilers?
+
+    > Explain IVY renderer?
+
+    > Know observables like pipe, map, subject, share, replay, tap
+
+    > Know about webpack?
+
+    > Modern HTML elements like tags etc?
+
+    > Template driven vs Reactive forms?
+
+    > What are pipes? (pure pipe, safe pipe etc)

@@ -1,11 +1,12 @@
-
-
 ## Group-I
+
     > Apply for Jobs
     > Data Structures and Algorithms
     > Design Patterns
     > System Design
+
 ## Group-II
+
     > React
     > Docker & Kubernetes
     > GraphQL
@@ -15,16 +16,21 @@
     > Kafka
     > RabbitMQ
     > Redis
+
 ## Group-III
+
     > Python
     > Django
     > Flask
 
 ## MongoDB
+
     - $group, $match, $unwind, $project, $lookup, $graphlookup, $bucket, 
 
 ## Splunk
+
     > Microservices
+
         - Microservice communication patterns
         - Service mesh, service registry
         - Scaling
@@ -41,9 +47,8 @@
     > Node.js
     > Agile
 
-
-
     LEARN:
+
         1. https://www.youtube.com/watch?v=E-7TBZxmkXE
         2. RabbitMQ + Kafka
         3. API Gateway
@@ -53,27 +58,28 @@
         7. Monitoring, Metrics and Logging
         8. Security and auth
 
-
 ## Starting Conversation
+
     > Hello, How are you doing today?
     > I'm pleased to meet you?
     > I'm thrilled / excited about this interview?
     > Thank you for taking the time to meet with me today?
     > It is really great to know more about your role
     > Thank you for the great conversation
-    > Once again thank you for your time, It was a pleasure meeting you. Hope you have a great rest of your day / evening
-
+    > Once again thank you for your time, It was a pleasure meeting you. Hope you have a 
+      great rest of your day / evening
 
 ## Interview Questions
+
  > Relational Vs Non-Relational databases and when do you use them?
  > What are single page applications?
  > What is docker and why do you use docker
  > Why Typescript compared to vanilla JS?
 
 ## Hiring Manager Round / Team Fit
+
     > https://www.indeed.com/career-advice/interviewing/managerial-round-interview-questions
     > https://www.indeed.com/career-advice/interviewing/software-engineer-behavioral-interview-questions
-
 
 ## Current Interviews:
 
@@ -84,8 +90,6 @@
     5. Intel - Manufacturing - Phone Screen
     6. Splunk
     7. Virgin Hyperloop one
-
-
 
 
     Javascript      Angular     Docker          Microservices       SDLC        Behavioral 

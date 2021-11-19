@@ -1,6 +1,15 @@
-/**
- * MATH
- */
+# CODING CHEATSHEET - JAVASCRIPT
+
+
+## DATA TYPES
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## TYPECASTING
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## MATH
     > Number.MAX_VALUE (ES5)
     > Number.MIN_VALUE (ES5)
     > Number.MAX_SAFE_INTEGER (ES6)
@@ -13,11 +22,8 @@
     > const arrx = [5,9];
         console.log("Math.max from given array : ", Math.max(...arrx)); (spread operator - ES6)
 
-/**
- * STRINGS
- */
-
-    # STRINGS
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## STRINGS
         > String("some text") -> clone a string
         > str.split("") -> convert's string to an character array
         > str.toLowerCase(), str.toUpperCase()
@@ -41,36 +47,34 @@
 
         
 
-        ### Validation Functions / Tricks
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- /**
- * ARRAYS
- */
-    > Create array
-      - Fixed size: new Array(5).fill(0)
-      - arr.length
-       
-    >arr.shift() --> pop from head / first 
-    > arr.unshift() --> push to head
-    > arr.sort(), arr.sort((x,y) => /* custom implementation*/)
-    > In arrays for sorting:
-      - Default sort supports lexographical sort (works on strings)
-      - For numerical sort always provide a compare function for ex: [-1,0,1,2,-1,-4].sort((x,y)=> x-y)
+## ARRAYS
+
+    > Create array::
+         - Fixed size: new Array(5).fill(0)
+         - arr.length
+         - arr.push()
+         - arr.pop()
+         - arr.shift() --> pop from head / first 
+         - arr.unshift() --> push to head
+
+    > Sorting::
+         - arr.sort(), arr.sort((x,y) => /* custom implementation*/)
+
+    > [NOTE] :: In arrays for sorting:
+         - Default sort supports lexographical sort (works on strings)
+         - For numerical sort always provide a compare function for ex: [-1,0,1,2,-1,-4].sort((x,y)=> x-y)
+
     > arr.reverse()
     > arr.concat(arr)
     > arr.slice()
     > arr.splice()
     > arr.join() , arr.join(#delimiter) -> joins array by given delimeter into an string
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- /**
- * TYPECASTING
- */
-
-
-/**
- * COLLECTIONS
- */
+## COLLECTIONS / DATA STRUCTURES (Built-In)
 
     ## Maps
         > const myMap = new Map();
@@ -90,10 +94,9 @@
       > Object.clone()
       > Object.hasOwnProperty()
  
- /**
- * MISCELLANEOUS
- */
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## MISCELLANEOUS
  ## Functions:
       > arguments keyword
             // In function we can get pseudo array of its parameters as arguments
@@ -109,3 +112,11 @@
 ## Spread Operator:
       > ...array
       > ...object
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## CONCEPTS
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

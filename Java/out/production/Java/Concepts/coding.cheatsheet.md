@@ -43,17 +43,32 @@
 
 ## STRINGS
   - Create string - new String()
+    
   - length - str.length()
+    
   - char c = str.charAt(index)
+    
   - String.copyValueOf(str)
+    
   - int i = str.indexOf('e')
+    
   - boolean res = str.contains('test')
+    
   - boolean res = str.startsWith('java')
+    
   - boolean res = str.endsWith('dev')
+    
   - string res = str.substring(4,11)
+    
   - str.toUpperCase()
 
   - string to array - str.toCharArray()
+
+  - Clone - new String(str)
+
+  - Compare two strings right way - str1.compareTo(str2) (returns 1, -1, or 0)
+
+  - String Equality: str1.equals(str2)
 
 
 ## ARRAYS
@@ -69,6 +84,13 @@
      - int[] arr = {1,2,3} // used when we want to declare and initialize at the same time
   ```
   - Arrays.fill(arr, -1)
+
+
+  - Arrays.sort(arr)
+    
+        - Arrays.sort(arr, new CustomComparator())
+    
+        - Import Arrays from java.utils package
 
   - arr.length
 

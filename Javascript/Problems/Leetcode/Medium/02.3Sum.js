@@ -28,7 +28,7 @@ Output: [[-1,-1,2],[-1,0,1]]
             let left = i+1;
             let right = nums.length-1;
             
-            let sum = 0 - nums[i];
+            let sum = 0 - nums[i]; // sum should equal to zero
             
             while(left < right){
                 

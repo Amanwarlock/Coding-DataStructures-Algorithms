@@ -4,6 +4,11 @@
     > https://zerotomastery.io/cheatsheets/python-cheat-sheet/?utm_source=udemy&utm_medium=coursecontent
     > https://github.com/gto76/python-cheatsheet
 
+## Interview Questions
+    > https://www.mygreatlearning.com/blog/python-interview-questions/
+    > https://www.interviewbit.com/python-interview-questions/
+    > https://hackr.io/blog/python-interview-questions
+
 ## Concepts:
     > Abstract classes --> https://www.youtube.com/watch?v=UDmJGvM-OUw
 
