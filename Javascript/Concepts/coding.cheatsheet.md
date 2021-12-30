@@ -1,6 +1,12 @@
 # CODING CHEATSHEET - JAVASCRIPT
 
 
+## Big O Cheatsheet
+
+     > https://www.bigocheatsheet.com/
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## DATA TYPES
 
 
@@ -17,6 +23,7 @@
     > Infinity, -Infinity
     > Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY
     > Math.max(5,9)
+    > Math.min(2, 4)
     > Math.abs(-2)
     > Math.pow(2,2) // 2^2 = 4
     > const arrx = [5,9];
@@ -25,15 +32,23 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## STRINGS
         > String("some text") -> clone a string
+        > str.length
         > str.split("") -> convert's string to an character array
+        > str.trim() (removes white spaces)
+               - Check  if string is empty
+                    $ str.trim().length === 0
+
         > str.toLowerCase(), str.toUpperCase()
         > str.concat(str2)
         > str.substring(1) // starting from 1 till end
+
         > str.charCodeAt(i) 
                + parse to ASCII; i - index in str ASCII - 128bit Extended ASCII - 256bit
                + A-Z = 65-90, a-z = 97-122, 48-57 = 0-9
                + String.charCodeAt() will not work;
+               + 
         > String.fromCharCode(65) // -> ans: A
+        
         > // parse to unicode
         > Ignore casing and non-letter characters
                let size = parseInt('z', 36) - parseInt('a', 36) + 1 // why add 1? because consider counting from 1-to-9, its 9 digits, but if we subtract 9-1=8 digits;
@@ -71,6 +86,7 @@
     > arr.slice()
     > arr.splice()
     > arr.join() , arr.join(#delimiter) -> joins array by given delimeter into an string
+    > Array.isArray()
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -83,17 +99,53 @@
         > map.has(key)
         > map.delete(key)
         > map.clear()
-        > map.size()
+        > map.size --> not a function
         > map.keys()
         > map.values()
         > map.entries() - [key, value]
+
+
+     ## Sets
+          let set = new Set()
+
+          > set.add(val)
+          > set.has(val)
+          > set.size --> not a function
+          > set.clear()
+          > for (let val of set){}
+          > set.keys()
+          > set.values()
+          > set.entries()
 
  
    ## Object
       > Object.keys()
       > Object.clone()
+      > Object.assign({}, obj1, obj2)
       > Object.hasOwnProperty()
  
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## LOGICAL OPERATORS
+
+     > OR
+
+     > AND
+
+     > XOR
+
+     > LEFT SHIFT
+
+     > RIGHT SHIFT
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## COMPARISON OPERATORS
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## RANDOM NUMBER GENERATOR
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## MISCELLANEOUS

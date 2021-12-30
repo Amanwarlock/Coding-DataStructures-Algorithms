@@ -1,4 +1,7 @@
-
+# Agile Methodology
+## Resources:
+        - https://www.youtube.com/watch?v=ZRMwR5NnHXY
+        - https://geekbot.com/blog/scrum-ceremonies-and-artifacts-what-wasnt-in-the-scrum-guide/
 
 ## Agile Software Development Methodology
     > Popular Agile frameworks are:
@@ -21,8 +24,11 @@
         - Sprint review --> It focues on the product
         - Sprint retrospective: What went well, What went wrong, Improvements, Interesting tech --> Focuses on the process
 
-    
 
-    > Resources:
-        - https://www.youtube.com/watch?v=ZRMwR5NnHXY
-        - https://geekbot.com/blog/scrum-ceremonies-and-artifacts-what-wasnt-in-the-scrum-guide/
+## Questions
+
+    > What are agile core values?
+
+    > Agile core principles?
+
+    

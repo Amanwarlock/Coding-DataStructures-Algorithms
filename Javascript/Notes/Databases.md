@@ -9,3 +9,4 @@
 > Replication
 > Sharding
 > Hash Functions
+> RDBMS vs NoSQL

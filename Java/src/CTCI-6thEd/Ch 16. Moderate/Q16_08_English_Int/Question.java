@@ -70,55 +70,60 @@ public class Question {
 		return listToString(parts);
 	}
 	
-	public static void main(String[] args) {		
-		/* numbers between 100000 and 1000000 */
-		for (int i = 0; i < 8; i++) {
-			int value = (int) (-1 * Math.pow(10, i));
-			String s = convert(value);
-			System.out.println(value + ": " + s);
-		}			
-		
-		/* numbers between 0 and 100 */
-		for (int i = 0; i < 10; i++) {
-			int value = AssortedMethods.randomIntInRange(0, 100);
-			String s = convert(value);
-			System.out.println(value + ": " + s);
-		}	
-		
-		/* numbers between 100 and 1000 */
-		for (int i = 0; i < 10; i++) {
-			int value = AssortedMethods.randomIntInRange(100, 1000);
-			String s = convert(value);
-			System.out.println(value + ": " + s);
-		}
-		
-		/* numbers between 1000 and 100000 */
-		for (int i = 0; i < 10; i++) {
-			int value = AssortedMethods.randomIntInRange(1000, 100000);
-			String s = convert(value);
-			System.out.println(value + ": " + s);
-		}		
-		
-		
-		/* numbers between 100000 and 100000000 */
-		for (int i = 0; i < 10; i++) {
-			int value = AssortedMethods.randomIntInRange(100000, 100000000);
-			String s = convert(value);
-			System.out.println(value + ": " + s);
-		}	
-		
-		/* numbers between 100000000 and 1000000000 */
-		for (int i = 0; i < 10; i++) {
-			int value = AssortedMethods.randomIntInRange(100000000, 1000000000);
-			String s = convert(value);
-			System.out.println(value + ": " + s);
-		}			
-                
-		/* numbers between 1000000000 and Integer.MAX_VALUE */
-		for (int i = 0; i < 10; i++) {
-			int value = AssortedMethods.randomIntInRange(1000000000, Integer.MAX_VALUE);
-			String s = convert(value);
-			System.out.println(value + ": " + s);
-		}			
+	public static void main(String[] args) {
+
+		int value = 8792773; // 9 , 15, 336, 1283, 31567, 8792773, 82792773, 19323984
+		String s = convert(value);
+		System.out.println(value + ": " + s);
+
+//		/* numbers between 100000 and 1000000 */
+//		for (int i = 0; i < 8; i++) {
+//			int value = (int) (-1 * Math.pow(10, i));
+//			String s = convert(value);
+//			System.out.println(value + ": " + s);
+//		}
+//
+//		/* numbers between 0 and 100 */
+//		for (int i = 0; i < 10; i++) {
+//			int value = AssortedMethods.randomIntInRange(0, 100);
+//			String s = convert(value);
+//			System.out.println(value + ": " + s);
+//		}
+//
+//		/* numbers between 100 and 1000 */
+//		for (int i = 0; i < 10; i++) {
+//			int value = AssortedMethods.randomIntInRange(100, 1000);
+//			String s = convert(value);
+//			System.out.println(value + ": " + s);
+//		}
+//
+//		/* numbers between 1000 and 100000 */
+//		for (int i = 0; i < 10; i++) {
+//			int value = AssortedMethods.randomIntInRange(1000, 100000);
+//			String s = convert(value);
+//			System.out.println(value + ": " + s);
+//		}
+//
+//
+//		/* numbers between 100000 and 100000000 */
+//		for (int i = 0; i < 10; i++) {
+//			int value = AssortedMethods.randomIntInRange(100000, 100000000);
+//			String s = convert(value);
+//			System.out.println(value + ": " + s);
+//		}
+//
+//		/* numbers between 100000000 and 1000000000 */
+//		for (int i = 0; i < 10; i++) {
+//			int value = AssortedMethods.randomIntInRange(100000000, 1000000000);
+//			String s = convert(value);
+//			System.out.println(value + ": " + s);
+//		}
+//
+//		/* numbers between 1000000000 and Integer.MAX_VALUE */
+//		for (int i = 0; i < 10; i++) {
+//			int value = AssortedMethods.randomIntInRange(1000000000, Integer.MAX_VALUE);
+//			String s = convert(value);
+//			System.out.println(value + ": " + s);
+//		}
 	}
 }

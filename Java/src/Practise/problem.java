@@ -1,37 +1,37 @@
 package Practise;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+
 
 public class problem {
 
-    public static int solution(int[] A, int X, int Y){
-        int minCost = Integer.MAX_VALUE;
-
-           for(int i = 0; i < A.length; i++){
-               int cost = 0;
-               int j = i;
-               int count = X;
-               while( count > 0 && j < A.length){
-                   cost += A[j];
-                   count -= 1;
-                   j += Y;
-               }
-               if(cost > 0 && count == 0){
-                   minCost = Math.min(minCost, cost);
-               }
-
-           }
-
-
-        return minCost;
-    }
-
     public static void main(String[] args) {
 
-        int[] arr = {4, 2, 3, 7}; // cost
+        // X T: O(x)
+        ArrayList<Dealership> dealers = new ArrayList<Dealership>();
 
-        int res = solution(arr, 2, 2);
+        dealers.add(new Dealership(234, 5, 6));
 
-        System.out.println("Result : " + res);
+    }
+
+
+    // Backedn
+    public static class Dealership{
+
+            int postalCode; // postal code dealr
+
+            int lat; // coorde
+
+            int longitude;
+
+        Dealership(int postalCode, int lat, int longitude){
+            this.postalCode = postalCode;
+            this.lat = lat;
+            this.longitude = longitude;
+        }
     }
 }
+
+

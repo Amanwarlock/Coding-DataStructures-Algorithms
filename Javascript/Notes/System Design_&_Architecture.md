@@ -1,6 +1,9 @@
 
 ## Resources
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# System Design
+
 
 ## How to Start design interviews
 
@@ -60,3 +63,39 @@
             > Tweet Collection - ID, usreID, lat, long, CreatedDate, NumFav
             > User -> Id, Name, Email, Dob, lastLogin
             > UserFollow --> user1, user2
+
+##  Questions:
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#  Architecture
+
+    > Angular vs React
+
+    > Docker Containers vs Virtual Machines
+        - https://www.youtube.com/watch?v=cjXI-yxqGTI
+
+    > Single threaded vs Multithreaded
+
+    > Node.js as multithreaded
+
+    > What is concurrency
+
+    > Compare Monolith vs Microservice
+
+    > Kafka vs RabbitMQ and why do we need them
+
+    > Javascript vs Typescript
+
+
+## Questions:
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Databases
+
+    > Explain RDBMS / SQL vs No SQL
+
+    > When to use RDBMS and No SQL? Explain scenario
+
+## Questions:

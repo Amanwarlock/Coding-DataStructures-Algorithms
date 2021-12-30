@@ -1,9 +1,16 @@
 
 # JAVA CODING CHEATSHEET
 
+## Big O Cheatsheet
+
+    > https://www.bigocheatsheet.com/
+//---------------------------------------------------------------------------------------------------------------------
+
 ## LOGGING
 
 ## CODE COMMENTS
+
+//---------------------------------------------------------------------------------------------------------------------
 
 ## DATA TYPES
   1. int
@@ -24,9 +31,12 @@
     6. long - 64 bits
     7. float - 32 bits
     8. double - 64 bits
-  
+
+//---------------------------------------------------------------------------------------------------------------------
 
 ## TYPE CASTING
+
+//---------------------------------------------------------------------------------------------------------------------
 
 ## MATH
 ```sh
@@ -34,12 +44,18 @@
   
   - Math.max(num1, num1)
   
+  - Math.min(num1, num2)
+  
   - Integer.MIN_VALUE
   
   - Integer.MAX_VALUE
 ```
 
+//---------------------------------------------------------------------------------------------------------------------
+
 ## LOOPS / ITERATORS
+
+//---------------------------------------------------------------------------------------------------------------------
 
 ## STRINGS
   - Create string - new String()
@@ -64,12 +80,21 @@
 
   - string to array - str.toCharArray()
 
+  _ str.trim() (remove white spaces)
+    - check if string is empty
+            $ str.trim().length() === 0
+
   - Clone - new String(str)
 
   - Compare two strings right way - str1.compareTo(str2) (returns 1, -1, or 0)
 
   - String Equality: str1.equals(str2)
 
+  - Character.isDigit(str) ---> to check if string is a valid number
+
+  - Character.isLetter(str) ---> To check if a char is a letter or alphabet
+
+//---------------------------------------------------------------------------------------------------------------------
 
 ## ARRAYS
 
@@ -98,10 +123,32 @@
 
   - For insertion and retrieval from arrays, indices are used. There is no other way
 
+//---------------------------------------------------------------------------------------------------------------------
+
 ## COLLECTIONS
 
+## Hash Map
+    
+    $ HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();    
+
+    > map.getorDefault(key, defaultValue if not found);
+
+### Queue (Min / Max Heap / Priority Queue)
+
+//---------------------------------------------------------------------------------------------------------------------
+
+## LAMBDA EXPRESSIONS (AKA - Lambda's)
+
+    > Lambda's are used with interfaces having only one function also known as funtional interfaces
+    
+    > Instead of using anonymous inner classes to provide implementation and call this one function, lambda expression 
+        can be used
+
+//---------------------------------------------------------------------------------------------------------------------
 
 ## MISCELLANEOUS
 
+
+//---------------------------------------------------------------------------------------------------------------------
 
 

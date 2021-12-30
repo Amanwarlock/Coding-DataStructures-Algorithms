@@ -1,16 +1,45 @@
+function findTargetSums(nums, target) {
+  if (nums === null || nums.length <= 1) {
+    return null;
+  }
 
+  const map = new Map();
 
-let str = "";
+  for (let p = 0; p < nums.length; p++) {
+    if (map.has(nums[p])) {
+      return [map.get(nums[p]), p];
+    } else {
+      let numToFind = target - nums[p];
+      map.set(numToFind, p);
+    }
+  }
 
-let str1 = " ";
+  return null;
+}
 
-let str2 = "AMan ";
+console.log("Method -1 : ", findTargetSums([1, 3, 5, 7, 2], 9));
 
-let str3 = " Aman";
+function findSums(nums, target) {
+  if (nums === null || nums.length <= 1) {
+    return null;
+  }
 
-let str4 = " Aman ";
+  nums.sort();
 
-console.log(str.trim().toLowerCase().length);
+  let p1 = 0;
+  let p2 = nums.length - 1;
 
+  while (p1 < p2) {
+    if (nums[p1] + nums[p2] === target) {
+      return [p1, p2];
+    } else if (nums[p1] + nums[p2] < target) {
+      p1++;
+    } else {
+      p2--;
+    }
+  }
 
-console.log(Number.MAX_SAFE_INTEGER);
+  return null;
+}
+
+console.log("Method -2 : ", findSums([1, 3, 5, 7, 2], 9));

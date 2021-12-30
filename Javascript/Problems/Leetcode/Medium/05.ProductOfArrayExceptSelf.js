@@ -88,4 +88,4 @@ function arrayProd2(nums){
     return result;
 }
 
-console.log("Method-2: ", arrayProd2(arr));
+console.log("Method-2: ", arrayProd2(arr));0

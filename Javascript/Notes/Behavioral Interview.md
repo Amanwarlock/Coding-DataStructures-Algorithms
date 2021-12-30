@@ -13,6 +13,8 @@
 
     > Online Paid Course: https://www.educative.io/courses/grokking-the-behavioral-interview
 
+    > https://www.indeed.com/career-advice/interviewing/managerial-round-interview-questions
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## NOTE
@@ -322,6 +324,7 @@
 
       - Allowed to make own decision, Commit mistakes, fail and Improvise
       - Be competitive and respectful
+      - Drive success for everyone around you
       - Share ideas openly, its ok to have conflicts, but learn to deal with it maturely before it escalates further
       - Allowed to experiment with
 

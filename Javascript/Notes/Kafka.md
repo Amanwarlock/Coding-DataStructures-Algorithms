@@ -26,3 +26,14 @@
 ## Streams DSL
     > Built on top of Kafka stream processor API as a High level abstraction layer
     > Map / reduce functionality
+
+
+## Kafka
+
+    > Kafka has a produces, kafka broker (server), consumer
+
+    > Inside kafka broker there are topics (Topic A, Topic B)
+
+    > Topics are logical partitions
+
+    > A producer produces to a topic and a consumer consumes from a particular topic

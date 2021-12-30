@@ -11,6 +11,13 @@ const matrix = [
                     [15,14,12,16]
                 ];
 
+ const row_col_interchange = [
+            [5, 2, 13, 15],
+            [ 1, 4, 3, 14 ],
+            [ 9, 8, 6, 12 ],
+            [ 11, 10, 7, 16 ]
+ ]
+                
 const output = [
                     [15,13,2,5],
                     [14,3,4,1],
@@ -35,6 +42,7 @@ var rotate = function(matrix) {
         }
     }
     
+    console.log("Matrix ; ", matrix);
     
     for(let row = 0 ; row < N; row++){
         for(let col = 0; col < Math.floor(N/2); col++){
@@ -45,3 +53,7 @@ var rotate = function(matrix) {
     }
     
 };
+
+
+
+rotate(matrix);

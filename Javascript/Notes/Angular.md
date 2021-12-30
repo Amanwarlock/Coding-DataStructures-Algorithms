@@ -6,6 +6,7 @@
     ## Github Repos
         > https://github.com/mschwarzmueller/RecipeBook
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Components
 
     ### Component Selector
@@ -82,6 +83,8 @@
                 @Output('newServer') onServerAdded = new EventEmitter<{name: string, description: string}>();
 
                 <app-item (newServer)='newServerHandler($event)'> </app-item>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Data Binding
     > Databinding = communication
 
@@ -116,6 +119,7 @@
             > DOM attribute data binding using property binding example
                     $ <img [src]="receipe.imagePath">
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Directives
 
     > Ex: <p appTurnGreen > Receives green color</p>
@@ -125,6 +129,7 @@
     })
 
     > Built-In Directives:::
+        > In built-in directives * indicates structural directives - that changes / modifies / removes 
         > ngIf
             - Example: <p *ngIf="isHide"> Hide Me </p>
 
@@ -161,7 +166,173 @@
 
         > <div *ngFor="let item of itemList; let i = index"> {i} - {item} </div>
 
+        > NOTE: while naming custom directive (inside @Directive decorator --> selector) use camelCase
 
+        > When we use this directive on HTML element or angular component we need to access this element.
+
+        > Angular injects / gives access to the element / component on which the directive sits on using elementRef.
+                    @import {Directive, ElementRef, OnInit} from '@angular/core';
+
+                    @Directive({
+                        selector: '[appHighlight]'
+                    })
+                    export class AppHighlight implements OnInit{
+                        
+                        constructor(elementRef: ElementRef){
+
+                        }
+
+                        ngOnInit(){
+                            this.elementRef.nativeElement.style.backgroundColor = 'Yellow';
+                        }
+                    }
+
+                // HTML
+                <p appHighlight > Style and Highlight me </p>
+
+            [Note : In app module declarations array, add this new custom directive just like you add new components]
+
+        > Renderer
+                - In the above example we are accessing HTML elements directly in typescript which is not a good way
+                 
+                - Better way is to use renderer
+
+                SYNTAX: this.renderer.setStyle(element reference, element property you want to modify, value to assign)
+
+                             @import {Directive, ElementRef, OnInit, Renderer2} from '@angular/core';
+
+                            @Directive({
+                                selector: '[appHighlight]'
+                            })
+                            export class AppHighlight implements OnInit{
+                                
+                                constructor(private renderer: Renderer2, private elementRef: ElementRef){
+
+                                }
+
+                                ngOnInit(){
+                                    this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'blue');
+                                }
+                            }
+
+                        // HTML
+                        <p appHighlight > Style and Highlight me </p>
+
+
+        > Listening to events and reacting in directive: HostListener
+                            @import {Directive, ElementRef, OnInit, Renderer2, HostListener} from '@angular/core';
+
+                            @Directive({
+                                selector: '[appHighlight]'
+                            })
+                            export class AppHighlight implements OnInit{
+                               
+                                // pass name of the event you want to listen
+                                @HostListener('mouseenter')  onMouseEnter(eventData: Event){
+                                    this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'blue');
+                                }
+
+                                @HostListener('mouseleave')  onMouseEnter(eventData: Event){
+                                    this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'transparent');
+                                }
+                                
+                                constructor(private renderer: Renderer2, private elementRef: ElementRef){
+
+                                }
+
+                                ngOnInit(){
+                                    
+                                }
+                            }
+
+                        // HTML
+                        <p appHighlight > Style and Highlight me </p>
+
+        > HostBinding: An alternative to renderer (use renderer is also a good option, this is just another alternative)
+
+                            @import {Directive, ElementRef, OnInit, Renderer2, HostListener, HostBinding} from '@angular/core';
+
+                            @Directive({
+                                selector: '[appHighlight]'
+                            })
+                            export class AppHighlight implements OnInit{
+
+                                // pass the property on the hosting element to which we want to bind; here property is after nativeElement.<whatever>
+                                @HostBinding('style.backgroundColor) backgroundColor: string = 'transparent';
+                               
+                                // pass name of the event you want to listen
+                                @HostListener('mouseenter')  onMouseEnter(eventData: Event){
+                                    this.backgroundColor =  'blue';
+                                }
+
+                                @HostListener('mouseleave')  onMouseEnter(eventData: Event){
+                                   
+                                    this.backgroundColor =  'transparent';
+                                }
+                                
+                                constructor(private renderer: Renderer2, private elementRef: ElementRef){
+
+                                }
+
+                                ngOnInit(){
+                                    
+                                }
+                            }
+
+                        // HTML
+                        <p appHighlight > Style and Highlight me </p>
+
+        > Custom property (Accepting input and event from outside the directive) 
+                            
+                            @import {Directive, ElementRef, OnInit, Renderer2, HostListener, HostBinding, Input} from '@angular/core';
+
+                            @Directive({
+                                selector: '[appHighlight]'
+                            })
+                            export class AppHighlight implements OnInit{
+
+                                @Input() defaultColor: string = 'transparent';
+                                @Input() highlightColor: string = 'blue'; // initialize with something to avoid error;
+
+                                // pass the property on the hosting element to which we want to bind; here property is after nativeElement.<whatever>
+                                @HostBinding('style.backgroundColor) backgroundColor: string;
+                               
+                                // pass name of the event you want to listen
+                                @HostListener('mouseenter')  onMouseEnter(eventData: Event){
+                                    this.backgroundColor =  this.highlightColor;
+                                }
+
+                                @HostListener('mouseleave')  onMouseEnter(eventData: Event){
+                                   
+                                    this.backgroundColor =  this.defaultColor;
+                                }
+                                
+                                constructor(private renderer: Renderer2, private elementRef: ElementRef){
+
+                                }
+
+                                ngOnInit(){
+                                    this.backgroundColor =  this.defaultColor;
+                                }
+                            }
+
+                        // HTML
+                        <p appHighlight [defaultColor]="'yellow'"  [highlightColor]= "'red'"> Style and Highlight me </p>
+
+
+        > ngSwitch Built-In directive:
+
+            - This is similar to the switch statement available in javascript
+            - Note how property binding is used
+
+                    <div [ngSwitch]="value">
+                            <p *ngSwitchCase="5"> value is 5 </p>
+                            <p *ngSwitchCase="10"> value is 10 </p>
+                            <p *ngSwitchCase="100"> value is 100 </p>
+                            <p *ngSwitchDefault="0"> value is 0 </p>
+                    </div>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Typescript
 
     > Typescript shortcut for variable assignment via constructor during instance creation
@@ -188,6 +359,7 @@
                     }
                 }      
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Local Template References
 
     > Local references / template local references are used only inside the HTML, but they can also be passed to the Typescript classes
@@ -205,6 +377,7 @@
 
             onAddServer(serverName: HTMLInputElement)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## @ViewChild()
 
@@ -237,7 +410,7 @@
               }
           }
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## [NOTE] - How to access HTML elements inside Typescript (Component)
     > There are two ways:
         1. Local References
@@ -245,7 +418,7 @@
         
         2. @ViewChild()
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## ngContent
 
     > In angular, anything between the opening and closing tag of elements/components is lost
@@ -269,7 +442,7 @@
 
     > ng-content acts like a placeholder that marks place in HTML for projection of content
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## @ContentChild
     NOTE:
         - For Angular 8+
@@ -308,6 +481,8 @@
                 ngAfterContentInit(){
                     console.log(this.serverContent.nativeElement.textContent)
                 }
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Component Lifecycle
 
     > When a component is created / instantiated, angular provides different methods to hook into the different phases that occur during the instantiation
@@ -346,7 +521,7 @@
         - Phase-8: ngOnDestroy
                 - Called once the component is about to be destroyed
          
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Intercomponent Communication (Cross component communication)
 
     ### Using DataService with Event Emitters
@@ -443,9 +618,9 @@
             }
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-## Services:
+## Services
 
     > From Angular 6+, instead of wiring up services in providers[] array, we can use @Injectable(providedIn: 'root')
     
@@ -453,6 +628,190 @@
         1. Services can be loaded lazily by angular behind the scenes
         2. Redundant code can be removed automatically -  Tree shaking  
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Pipes
+
+    > Pipes are used to transform output inside the template (HTML)
+        - usecase:
+            - For transforming, we don't want to update the value in memory / variable
+            - We just want to transform the value while displaying in HTML --> use pipe
+
+    > There are pipes for synchornous and asynchronous data
+
+    > Built-In Pipes:
+            > Uppercase pipe:
+                      - <p> {{ username | uppercase }}</p>
+            
+            > Date:
+                <p> { createdAt | date } </p>
+
+                - Parameterizing / configuring a pipe - we use colon : and string params are passed
+                - Note: for multiple parameters, each parameter is separated by colon --> date: 'fullDate':
+                    - <p> { createdAt | date: 'fullDate' } </p>
+
+            > async:
+
+    > Chaining multiple pipes: Pipes are evaluated from left to right (order matters)
+
+            <p> {createdAt | date: 'fullDate' | uppercase }</p>
+
+    > Creating custom pipes:
+
+            // name -- shorten.pipe.ts
+
+            STEPS:
+                - Import, implement  PipeTransform interface from @angular/core
+                - Add @Pipe decorator to the class
+                - Override the transform method from the interface --> the method must return something
+                - Add the new custom pipe to the declarations array in app module just like we do for the components and directives
+
+                
+                                    import {PipeTransform } from '@angular/core';
+
+                                    @Pipe({
+                                        name: 'shorten'
+                                    })
+                                    export class ShortenPipe implements PipeTransform {
+
+                                        transform(value: any){
+                                            if(value.length > 10){
+                                                return value.substr(0, 10) + '...';
+                                            }
+                                            return value;
+                                        }
+                                    }
+
+                                    // HTML
+
+                                    <p> {{ name | shorten }} </p>
+
+            > Parameterizing custom pipes:
+
+                                    import {PipeTransform } from '@angular/core';
+
+                                    @Pipe({
+                                        name: 'shorten'
+                                    })
+                                    export class ShortenPipe implements PipeTransform {
+
+                                        transform(value: any, limit: number){
+                                            if(value.length > limit){
+                                                return value.substr(0, limit) + '...';
+                                            }
+                                            return value;
+                                        }
+                                    }
+
+                                    // HTML
+
+                                    <p> {{ name | shorten: 10 }} </p>
+
+            > Example of filter pipe:
+
+                                    import {PipeTransform } from '@angular/core';
+
+                                    @Pipe({
+                                        name: 'filter'
+                                    })
+                                    export class FilterPipe implements PipeTransform {
+
+                                        transform(arr: any, filterString: string, propName: string){
+                                            if(arr.length === 0 || filterString === ' '){
+                                                return arr;
+                                            }
+                                            return arr.filter(el => el[propName] === filterString);
+                                        }
+                                    }
+
+                                    // HTML
+
+                                    <li *ngFor="let server of servers | filter:status:'status'"> {{server.name}}  </li>
+
+            > Pure vs Impure pipes
+
+                    - In angular the pipe re-runs whenever the input / parameter to the pipe changes
+                    - But pipe won't re-run if the data changes. for example: in above, if new server is added to list, the filter pipe won't re-run
+                        and the new server will not be shown
+                    - This behaviour is intentional from angular, to manager the performance. Re-running pipe whenever data changes on screen is costly
+                    - We can force the pipe to re-run whenever data changes my making pure:false in @Pipe decorator
+
+                            @Pipe({
+                                name: 'filter',
+                                pure: false
+                            })
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Forms
+
+    > There are two types of forms:
+            1. Template driven forms
+            2. Reactive forms
+
+    > When to use reactive forms:
+
+            - Wheneve  we want to have programmatical control to the fields and validations 
+
+            - Use template driven forms when less number of fields are present, it offers two-binding ngModule
+                Also use them when there are not many or very basic validations required 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Routing
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## HTTP
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Observables
+
+    > Promises vs Observables
+
+        - They both are used to handle async code. They let us perform other task while its waiting for response
+        - Promises receive and response / update and they are done
+        - Observables set up a subscription, as long as you have a subscription, you will continue to receive updates, instead of just one response.
+        - Observables are lazy, they are not executed unless we subscripe
+        - Promises execute immediately
+        - Observables emit muliple values over a period of time
+
+
+    > Observer:
+            const observer = {
+                next: fn,
+                error: err,
+                complete: ()=> {}
+            }
+
+    > Async await
+
+            - Await is basically syntactic sugar for promises
+            - It makes asynchronous code look more like synchronous code which is easier for humans to understand
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Ahead-of-Time (AoT) vs Just-in-Time (JiT) Compilation: Optimization
+
+    > When we write code in angular, only angular can understand not the browser
+
+    > Just-in-Time compilation:
+            > The typescript compiler compiles the code to Javascript
+
+            > Then the angular compiler compiles the template syntax to Javascript DOM instructions (ng serve)
+
+            > All this happens in browser (at run time)
+
+    > Ahead-of-Time compilation:
+
+        > The angular compiler code is pretty big and does not have to be a part of our code
+
+        > we can build and transpile the angular code that the browser can run at compilation time
+
+        > It runs during the build process before the app is deployed
+
+        > This results in smaller bundle size (as code is without angular template compiler code)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Angular-CLI
 
     > Component
@@ -460,7 +819,7 @@
             - ng g c <path/name> --module=<module-name> --skip-tests --flat --dry-run
 
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## QUESTIONS
 
     > Difference between RxJS and Promises
@@ -479,4 +838,5 @@
 
     > Template driven vs Reactive forms?
 
-    > What are pipes? (pure pipe, safe pipe etc)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

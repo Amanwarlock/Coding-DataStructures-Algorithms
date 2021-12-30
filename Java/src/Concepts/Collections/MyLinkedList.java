@@ -52,7 +52,8 @@ public class MyLinkedList {
         list.add("Python");
         System.out.println("Printing linked list : " + list);
 
-
+        String node = list.getFirst();
+        System.out.println("Node : " + node);
 
     }
 }

@@ -1,62 +1,4 @@
-## Group-I
 
-    > Apply for Jobs
-    > Data Structures and Algorithms
-    > Design Patterns
-    > System Design
-
-## Group-II
-
-    > React
-    > Docker & Kubernetes
-    > GraphQL
-    > MySQL & PostGreSQL
-    > NestJS
-    > Mircoservices
-    > Kafka
-    > RabbitMQ
-    > Redis
-
-## Group-III
-
-    > Python
-    > Django
-    > Flask
-
-## MongoDB
-
-    - $group, $match, $unwind, $project, $lookup, $graphlookup, $bucket, 
-
-## Splunk
-
-    > Microservices
-
-        - Microservice communication patterns
-        - Service mesh, service registry
-        - Scaling
-        - RabbitMQ, Kafka, Redis
-        - Streams
-        - Microservice patterns
-        - Load balancing
-        - Caching
-        - How to fetch or query millions of users in db
-        - Security -- SQL injection attact, XSS attacks
-        - How to monitor microservices, alerts (new Relic etc)
-        - How to debug and fix memory leaks
-        - APIgateway + Rate limiter
-    > Node.js
-    > Agile
-
-    LEARN:
-
-        1. https://www.youtube.com/watch?v=E-7TBZxmkXE
-        2. RabbitMQ + Kafka
-        3. API Gateway
-        4. Event Driven Architecture
-        5. Pub Sub pattern and async communication in microservices
-        6. Service Mesh, Registry, Circuit Breaker
-        7. Monitoring, Metrics and Logging
-        8. Security and auth
 
 ## Starting Conversation
 
@@ -69,59 +11,268 @@
     > Once again thank you for your time, It was a pleasure meeting you. Hope you have a 
       great rest of your day / evening
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Technical Topics
+
+    > Data structures
+
+        - Hashtables
+              - Hashtables using arrays
+
+        - Trees
+                - Tree construction
+                - Tree manipulation
+                - Tree traversal - BFS, DFS (Pre-order, In-order, Post-order)
+                - Binary trees, n-ary trees, trie-trees
+                - Familarity with balanced binary trees like - Red/black tree, Splay tree, AVL tree (traversal + construction)
+
+        - Graphs
+              - Graph representation using - matrix, adjacency list etc (familiarize with pros and cons of each representation)
+              - Graph traversal - BFS + DFS
+              - Algorithms such as - Dijkstra, A*, Bellman-Ford
+
+    > Algorithms
+
+        - Big O notation and analysis
+        - Sort - Merge sort, Quick sort (nlogn)
+        - Dijkstra, A*, Bellman-ford
+
+    > System Design
+
+            - Distributed Systems
+            - Event Driven Architectures
+            - Microservices
+            - CAP theorem, Conways law
+            - Caching
+            - DNS
+            - CDN
+            - Availability, Scalability - How to measure them
+            - Clusters
+            - Load Balancers and Load balancing
+            - Horizontal and Vertical Scaling
+            - API gateway
+            - Authentication - JWT, OAUTH, refersh tokens
+            - Hashing and Consistent Hashing
+            - RBACS - ROles management and access writes
+
+    > Database Design
+
+        - Relational vs No-Sql
+        - ACID vs ATOMIC transactions
+        - Replication and sharding
+        - N+1 Rule  of replication
+        - Data masking
+        - Indexing
+        - Stored procedures, Aggregations
+        - Versioning
+        - Hashing passwords
+
+    > Architecture
+
+        - Angular vs React
+        - RestAPI vs SOAP vs GraphQL
+
+    > Design Patterns
+
+    > OOPs
+
+        - Interface
+        - Inheritance, Polymorphism, Abstraction, Encapsulation (Four Pillars of OOPs)
+        - Access Modifiers (Package, Protected, Public, Private)
+        - Error Handling
+        - Generics
+        - Typecasting
+        - Concurrency and Threads
+        - Garbage Collection
+        - Serialization
+        - File IO
+
+    > Programming Language
+
+            Language:
+                    - Java
+                    - JavaScript
+                    - Python
+                    - GoLang
+
+            Frameworks:
+                    - Node.js
+                    - React
+                    - Angular
+                    - Flask
+                    - Django
+                    - Spring, Spring Boot
+                    - Fiber, Iris
+                    - Nest
+             Tools:
+                    - Weback
+                    - RxJS
+                    - Docker
+                    - Kubernetes
+                    - Jenkins, Ansible, Travis CI
+                    - NPM
+                    - Redis, RabbitMQ, Kafka      
+
+    > Operating System
+
+        - Single threading
+        - Concurrency
+        - Scheduling
+        - COntext switching
+        - Threads
+        - Semiphores, Mutex
+        - Memory allocation and Management
+        - Computation
+        - Processes
+        - Memory
+        - Shared resources
+        - Virtualization
+        - Hypervisers
+
+    > Computer Networks
+
+        - Routing
+        - Domain Names DNS
+        - IPV4 vs IPV6
+        - Subnetting
+        - Firewalls, DMZs, IDS
+        - XSS, Cross site scripting, DoS, DDoS attacks, SQL Injection
+        - Protocols
+        - TCP/IP vs UDP
+        - Sockets
+
+    > Agile
+
+    > Security
+
+    > Mathematics
+
+            - Probability
+            - Combinatorics
+            - N choose K problems
+            - Coordinate Geometry
+
+    > Popular Coding Problems / Paradims
+
+        Techniques::
+              - Sliding Window technique
+              - Two pointers
+              - Topological Sort
+              - Max min vs Optimization
+              - Knapsack Problems
+              - NP-complete
+
+        Classic Problems::
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## JavaScript Topics
+
+
+    ## Interview Questions
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## React Topics And Questions
+
+
+
+     ## Interview Questions
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Angular Topics And Questions
+
+
+     ## Interview Questions
+
+    1. Explain lifecycle hooks ?
+
+    2. Difference between directives and components ?
+
+    3. Difference between promises and Rxjs?
+
+    4. What is lazy loading ?
+
+    5. JIT (Just in time ) vs AOT (Ahead of time) compilers ?
+
+    6. Explain IVY renderer?
+
+    7. Explain Dependency injection ?
+
+    8. Explain DOM sanitization ?
+
+    9. Explain HTTP interceptors?
+
+    10. Explain Route guards ?
+
+    11. Expplain can activate etc ?
+
+    12. Content children , view children ?
+
+    13. Template attributes / variables / references?
+
+    14. Pipes?
+
+    15. View encapsulation
+
+    16. String interpolation vs data binding
+
+    17. lazy  loading
+
+    18. Route URL questions - id, fragments, passing data, resolving data, prefetching etc.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Python Topics And Questions
+
+     ## Interview Questions
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Interview Questions
 
- > Relational Vs Non-Relational databases and when do you use them?
- > What are single page applications?
- > What is docker and why do you use docker
- > Why Typescript compared to vanilla JS?
+    > Relational Vs Non-Relational databases and when do you use them?
+    > What are single page applications?
+    > What is docker and why do you use docker
+    > Why Typescript compared to vanilla JS?
 
-## Hiring Manager Round / Team Fit
+    > RDBMS vs NoSQL comparison
 
-    > https://www.indeed.com/career-advice/interviewing/managerial-round-interview-questions
-    > https://www.indeed.com/career-advice/interviewing/software-engineer-behavioral-interview-questions
+    > Promises vs Async await Vs Observables
 
-## Current Interviews:
+    > How to choose language for project. Node.js vs Python vs Java vs Golang
 
-    1. Cisco - webex 
-    2. Tesla - online assessment - ANgular, Javascript
-    3. Volvo - online assessment - Java
-    4. Intel - Python, react
-    5. Intel - Manufacturing - Phone Screen
-    6. Splunk
-    7. Virgin Hyperloop one
+    > Angular vs React
 
+    > React state vs Prop
 
-    Javascript      Angular     Docker          Microservices       SDLC        Behavioral 
-    Python          React       RabbitMQ        System Design       Agile
-    Node.js                     Kafka
-    Java                        Redis
-                                MongoDB
+    > Kafka vs RabbitMQ
 
-    Routine - Revise Problems + New Problems + System design + Angular / react + programming lang + DevOps + Architecture + Behavioral 
+    > n+1 rule for database replication
 
-> RDBMS vs NoSQL comparison
+    > Typescript vs Javascript
 
-> Promises vs Async await Vs Observables
+    > Websockets vs HTTP vs Long Polling vs Server Side Events
 
-> How to choose language for project. Node.js vs Python vs Java vs Golang
+    > What is API gateway?
 
-> Angular vs React
+    > How to design a caching system
 
-> Typescript vs Javascript
+    > How to monitor microservices and logging 
 
-> Websockets vs HTTP vs Long Polling vs Server Side Events
+    > What is SSR server side rendering
 
-> What is API gateway?
+    > What is monorepo? Nrwl
 
-> How to design a caching system
+    > Micro frontends ?
 
-> How to monitor microservices and logging 
+    > Why to use docker? what is the advantage?
 
-> What is SSR server side rendering
+    > What is functional programming?
 
-> What is monorepo? Nrwl
+    > What are pure and impure functions?
 
-> Micro frontends ?
+    > Explain multithreading ? Disadvantages ? Sharing of memory? 
 
-> Why to use docker? what is the advantage?
+    > ACID vs ATOMIC Transactions

@@ -37,5 +37,37 @@ function dfs(nums, i, res, subset){
 
 
 
-console.log(powerSets([1,2,3]));
+console.log("Result - 1 ", powerSets([1,2,3]));
 
+
+function powerSets2(nums){
+    return powerSetRecurse(nums, 0);
+}
+
+
+function powerSetRecurse(nums, i){
+
+    let result;
+
+    if(i === nums.length){
+        result = [[]];
+    }else{
+
+        result = powerSetRecurse(nums, i+1);
+        let item = nums[i];
+        let moreSets = [];
+
+        for(let subSet of result){
+            let newSet = [...subSet]; // clone
+            newSet.push(item);
+            moreSets.push(newSet); 
+        }
+
+        result = result.concat(moreSets);
+    }
+
+    return result;
+}
+
+
+console.log("Result-2 ", powerSets2(['a1', 'a2', 'a3']), powerSets2(['a1', 'a2', 'a3']).length);

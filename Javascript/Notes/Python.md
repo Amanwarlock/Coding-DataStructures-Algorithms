@@ -69,6 +69,17 @@
 
     NOte: In short remember - Int, Float, Bool, Str, list, tuple, set, dict
 
+
+## Immutable Datatypes
+
+    > Tuples
+
+    > Strings
+
+    > Boolean
+
+    > Float
+
 ## Operators
     > Add - +
     > Subtraction - -
@@ -319,7 +330,7 @@
     > lambda function:
         - Syntax: lambda parameter : operation that returns a value  (lambda is a keyword)
 
-        $ sqaure = lambda num : num**2
+        $ square = lambda num : num**2
 
         $ list(map(lambda num: num**2, my_list))
 
@@ -327,6 +338,7 @@
 
 
 ## Scoping 
+    > Scope = what variables do I have access to?
     > Python follows LEGB rule: (local, Enclosing, Global, Built-in)
     > Local : Names assigned with in a function or a block of code
     > Enclosing function locals: Names in local scope of all enclosing functions from inner to outer (it propogates from inner to outer to find variable of all enclosing functions)
@@ -354,6 +366,35 @@
 
 ## Error Handling
     > try: , except: , else: , finally:
+
+
+## Anaconda
+
+
+    ### Creating Virtual Environments
+
+        STEP-1:  conda create --name myenv python flask
+
+        STEP-2: Activate environment: 
+                    - activate myenv  (windows) 
+                    - source activate myenv (mac or bash or linux OS)
+
+        STEP-3: Install additional dependencies in your environment
+                    - conda install numpy  (make sure activate is activated)
+
+        STEP-4: Deactivate the environment
+                    - deactivate (windows)
+                    - source deactivate (mac or linux)
+
+    ### Commands for Virtual Environments
+        
+        > conda create --name mytestenv   or conda create -n mytestenv
+
+        > Create with specific version or specific package:
+            - conda create --name mytestenv python=3.5
+            - conda create -n myenv numpy
+
+        > List of environments: conda env list
 
 
 ## Miscellaneous

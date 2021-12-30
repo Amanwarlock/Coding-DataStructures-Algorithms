@@ -52,7 +52,13 @@ public class QuestionA {
 	
 	public static void main(String[] args) {
 		HashSet<String> dictionary = AssortedMethods.getWordListAsHashSet();
-		String sentence = "As one of the top companies in the world, Google"; // will surely attract the attention of computer gurus. This does not, however, mean the company is for everyone.";
+
+		//String sentence = "As one of the top companies in the world, Google"; // will surely attract the attention of computer gurus. This does not, however, mean the company is for everyone.";
+
+		//String sentence = "I reset the computer. It still didn't boot!";
+
+		String sentence = "This is awesome"; // This is mikes favourite food
+
 		sentence = clean(sentence);
 		System.out.println(sentence);
 		//Result v = parse(0, 0, new HashMap<Integer, Result>());

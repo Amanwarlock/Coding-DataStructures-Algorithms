@@ -25,4 +25,6 @@
 };
 
 
-console.log(removeDuplicates([1,1,2]));
+let nums = [1, 1, 2]; // [1, 2, 3]
+
+console.log(removeDuplicates(nums), nums);
