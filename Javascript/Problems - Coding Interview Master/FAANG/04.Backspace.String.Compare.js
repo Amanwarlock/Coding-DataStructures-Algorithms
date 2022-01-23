@@ -66,9 +66,6 @@ console.log(backspaceCompare(string1, string2));
  * BRUTE FORCE
  */
 
-const string1 = "ab#z"
-const string2 = "az#z"
-
 const buildString = function(string) {
     const builtString = [];//stack
     for(let p = 0; p < string.length; p++) {

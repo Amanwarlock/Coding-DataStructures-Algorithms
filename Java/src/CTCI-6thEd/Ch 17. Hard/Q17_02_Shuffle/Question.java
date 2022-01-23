@@ -37,7 +37,8 @@ public class Question {
 	public static void main(String[] args) {
 		int[] cards = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 		System.out.println(AssortedMethods.arrayToString(cards));
-		shuffleArrayIteratively(cards);
+		shuffleArrayRecursively(cards, cards.length-1);
+		//shuffleArrayIteratively(cards);
 		System.out.println(AssortedMethods.arrayToString(cards));
 	}
 }

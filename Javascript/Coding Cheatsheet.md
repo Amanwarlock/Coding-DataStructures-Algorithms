@@ -128,15 +128,26 @@
 
 ## LOGICAL OPERATORS
 
-     > OR
+     > OR - ||
 
-     > AND
+     > AND - &&
 
-     > XOR
+     > NOT - !
 
-     > LEFT SHIFT
 
-     > RIGHT SHIFT
+## BITWISE OPERATORS
+
+     > OR - a | b  (Bitwise OR)
+
+     > AND - a & b
+
+     > XOR - a ^ b
+
+     > NOT - ~a
+
+     > LEFT SHIFT - a << b 
+
+     > RIGHT SHIFT - a >> b
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## COMPARISON OPERATORS

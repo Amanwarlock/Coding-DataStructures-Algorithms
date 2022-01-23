@@ -11,6 +11,7 @@ public class QuestionA {
 	}
 	
 	public static boolean hasEqualLettersNumbers(char[] array, int start, int end) {
+		System.out.println("   " +  start + " - " + end);
 		int counter = 0;
 		for (int i = start; i <= end; i++) {
 			if (Character.isLetter(array[i])) {

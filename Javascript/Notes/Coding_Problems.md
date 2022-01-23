@@ -58,10 +58,11 @@
                    2. Array -> Unique or duplicates, Empty and null, Data types, Can there be multiple solutions
           2. Identify input and output format and structure
 
-    2. Discuss Examples
-    3. Discuss brute force first and then discuss optimal (discuss multiple ways of solving) (intusion / assumption)
-    4. Decide the route for the problem
-    5. Write comments and TODOs for some helper methods and functions, then comeback to finish them
+    2. Test cases
+    3. Discuss Examples
+    4. Discuss brute force first and then discuss optimal (discuss multiple ways of solving) (intusion / assumption)
+    5. Decide the route for the problem
+    6. Write comments and TODOs for some helper methods and functions, then comeback to finish them
 
 
 ## Edge Cases
@@ -72,11 +73,13 @@
         - Will there be a solution
         - Can there be multiple solutions
         - What if input is invalid
+        - Are we prioritizing code compactness vs performance vs just approach and different solutions/methods
 
     > For Arrays:
 
         - Array of Strings (lowercase, uppercase, ASCII, Ext ASCII, unicode, Empty)
         - Array of Numbs (Integers, -ve, +ve, Decimal or floats)
         - Duplicates or unique
+        - Will the array fit in memory
 
     >  
