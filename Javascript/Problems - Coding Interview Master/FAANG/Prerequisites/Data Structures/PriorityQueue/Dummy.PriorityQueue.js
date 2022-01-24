@@ -1,4 +1,8 @@
-
+/**
+ * 
+ *  Simplest way of implementing a Priority Queue (aka MinMax Heap) for interviews
+ *      - Consider as Skeleton or Pseudo code
+ */
 
 class DummyPriorityQueue{
 

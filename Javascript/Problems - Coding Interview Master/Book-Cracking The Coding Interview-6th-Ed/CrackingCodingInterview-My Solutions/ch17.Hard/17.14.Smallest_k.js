@@ -1,19 +1,5 @@
-/**
- * Based on binary search and quick sort --modified and tailored as per  Hoare's quickselect algorithm;
- * LINK: https://leetcode.com/problems/kth-largest-element-in-an-array/
- */
 
- const array = [1, 5, 2, 3, 2, 9, -1, 11, 6, 13, 15, 2];
-
- /**
-  *     Test-1:  [1, 5, 2, 9, 1, 11, 6, 13, 15]
-  *     
-  *     Test-2: [1, 5, 2, 9, -1, 11, 6, 13, 15]
-  * 
-  *     Test-3: [1, 5, 2, 3, 2, 9, -1, 11, 6, 13, 15, 2]
-  */
-
- const kToFind = 6;
+ 
  
  const swap = function (array, i, j) {
    const temp = array[i];
@@ -46,7 +32,7 @@
    }
  };
  
- var findKthLargest = function (nums, k) {
+ var findKSmallest = function (nums, k) {
    const indexToFind = k-1;
    console.log("index t find ", indexToFind);
    let kth = quickSelect(nums, 0, nums.length - 1, indexToFind);
@@ -58,5 +44,18 @@
 
    return result;
  };
+
+
+ const array = [1, 5, 2, 3, 2, 9, -1, 11, 6, 13, 15, 2];
+
+ /**
+  *     Test-1:  [1, 5, 2, 9, 1, 11, 6, 13, 15]
+  *     
+  *     Test-2: [1, 5, 2, 9, -1, 11, 6, 13, 15]
+  * 
+  *     Test-3: [1, 5, 2, 3, 2, 9, -1, 11, 6, 13, 15, 2]
+  */
+
+ const k = 6;
  
- console.log(findKthLargest(array, kToFind))
+ console.log(findKSmallest(array, k))
