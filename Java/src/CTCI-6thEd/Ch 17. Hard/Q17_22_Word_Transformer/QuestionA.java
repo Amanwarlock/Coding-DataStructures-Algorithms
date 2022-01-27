@@ -67,3 +67,5 @@ public class QuestionA {
 	}
 
 }
+
+// Visited : tree -> pree --> pret --> fret --> frat --> flat
